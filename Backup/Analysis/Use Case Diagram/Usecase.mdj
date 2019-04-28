@@ -1,0 +1,25 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Liquor Stock management",
+	"ownedElements": [
+		{
+			"_type": "UMLModel",
+			"_id": "AAAAAAFqYufpkQ861MQ=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "UseCase",
+			"ownedElements": [
+				{
+					"_type": "UMLUseCaseDiagram",
+					"_id": "AAAAAAFqYufpkQ87z5E=",
+					"_parent": {
+						"$ref": "AAAAAAFqYufpkQ861MQ="
+					},
+					"name": "UseCaseDiagram"
+				}
+			]
+		}
+	]
+}
