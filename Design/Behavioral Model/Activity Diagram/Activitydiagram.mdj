@@ -1,0 +1,25 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "Activity diagram",
+	"ownedElements": [
+		{
+			"_type": "UMLActivity",
+			"_id": "AAAAAAFq1POSNu5W6/M=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "Activity1",
+			"ownedElements": [
+				{
+					"_type": "UMLActivityDiagram",
+					"_id": "AAAAAAFq1POSNu5XIQo=",
+					"_parent": {
+						"$ref": "AAAAAAFq1POSNu5W6/M="
+					},
+					"name": "ActivityDiagram1"
+				}
+			]
+		}
+	]
+}
