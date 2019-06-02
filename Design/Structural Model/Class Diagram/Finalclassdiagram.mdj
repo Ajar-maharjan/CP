@@ -219,7 +219,7 @@
 											"top": 450,
 											"width": 179.17529296875,
 											"height": 13,
-											"text": "+Register(): Bool",
+											"text": "+Register(): String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -766,7 +766,7 @@
 											"top": 180,
 											"width": 134.0244140625,
 											"height": 13,
-											"text": "+Double LiquorPrice",
+											"text": "+Float LiquorPrice",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1133,7 +1133,7 @@
 											"top": 326,
 											"width": 167,
 											"height": 13,
-											"text": "+String DefaultDiscount",
+											"text": "+Int DefaultDiscount",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9247,7 +9247,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFrFvWEnDVjOnU="
 									},
-									"type": "Bool",
+									"type": "String",
 									"direction": "return"
 								}
 							]
@@ -9570,7 +9570,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFrCS+8q4ehfdM="
 							},
-							"name": "Double LiquorPrice",
+							"name": "Float LiquorPrice",
 							"type": ""
 						},
 						{
@@ -9762,8 +9762,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFrCS/Q+IgKtoU="
 							},
-							"name": "String DefaultDiscount",
-							"type": ""
+							"name": "Int DefaultDiscount"
 						},
 						{
 							"_type": "UMLAttribute",
