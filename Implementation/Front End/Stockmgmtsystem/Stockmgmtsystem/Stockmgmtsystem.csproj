@@ -46,15 +46,140 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategory.Designer.cs">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddLiquor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLiquor.Designer.cs">
+      <DependentUpon>AddLiquor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddLoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLoyalCustomer.Designer.cs">
+      <DependentUpon>AddLoyalCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.cs" />
+    <Compile Include="ChangePin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePin.Designer.cs">
+      <DependentUpon>ChangePin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateBill.Designer.cs">
+      <DependentUpon>CreateBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbConnect.cs" />
+    <Compile Include="DeleteLoyalCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteLoyalCustomer.Designer.cs">
+      <DependentUpon>DeleteLoyalCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCategory.Designer.cs">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditLiquor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditLiquor.Designer.cs">
+      <DependentUpon>EditLiquor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialRegister.Designer.cs">
+      <DependentUpon>InitialRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liquor.cs" />
+    <Compile Include="LiquorCategory.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoyalCustomer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoverAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecoverAccount.Designer.cs">
+      <DependentUpon>RecoverAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetDefaultDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetDefaultDiscount.Designer.cs">
+      <DependentUpon>SetDefaultDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockReport.Designer.cs">
+      <DependentUpon>StockReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="ViewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCategory.Designer.cs">
+      <DependentUpon>ViewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLiquor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLiquor.Designer.cs">
+      <DependentUpon>ViewLiquor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCategory.resx">
+      <DependentUpon>AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLiquor.resx">
+      <DependentUpon>AddLiquor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLoyalCustomer.resx">
+      <DependentUpon>AddLoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePin.resx">
+      <DependentUpon>ChangePin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateBill.resx">
+      <DependentUpon>CreateBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteLoyalCustomer.resx">
+      <DependentUpon>DeleteLoyalCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCategory.resx">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditLiquor.resx">
+      <DependentUpon>EditLiquor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialRegister.resx">
+      <DependentUpon>InitialRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +192,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecoverAccount.resx">
+      <DependentUpon>RecoverAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetDefaultDiscount.resx">
+      <DependentUpon>SetDefaultDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockReport.resx">
+      <DependentUpon>StockReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCategory.resx">
+      <DependentUpon>ViewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLiquor.resx">
+      <DependentUpon>ViewLiquor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

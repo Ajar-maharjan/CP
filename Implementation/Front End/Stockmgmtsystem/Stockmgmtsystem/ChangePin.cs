@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace Stockmgmtsystem
 {
-    public partial class Login : Form
+    public partial class ChangePin : Form
     {
-        public Login()
+        public ChangePin()
         {
             InitializeComponent();
-        }
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }

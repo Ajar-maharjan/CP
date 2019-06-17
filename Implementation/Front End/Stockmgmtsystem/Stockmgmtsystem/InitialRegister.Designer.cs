@@ -1,6 +1,6 @@
 ﻿namespace Stockmgmtsystem
 {
-    partial class Login
+    partial class InitialRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -30,57 +30,45 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.TxtPin = new System.Windows.Forms.TextBox();
-            this.LblForgotpin = new System.Windows.Forms.LinkLabel();
-            this.BtnLogin = new System.Windows.Forms.Button();
+            this.BtnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 44);
+            this.label1.Location = new System.Drawing.Point(120, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Pin";
+            this.label1.Text = "Insert Pin";
             // 
             // TxtPin
             // 
-            this.TxtPin.Location = new System.Drawing.Point(87, 41);
+            this.TxtPin.Location = new System.Drawing.Point(76, 52);
             this.TxtPin.Name = "TxtPin";
-            this.TxtPin.Size = new System.Drawing.Size(137, 20);
+            this.TxtPin.Size = new System.Drawing.Size(140, 20);
             this.TxtPin.TabIndex = 1;
             // 
-            // LblForgotpin
+            // BtnRegister
             // 
-            this.LblForgotpin.AutoSize = true;
-            this.LblForgotpin.Location = new System.Drawing.Point(44, 79);
-            this.LblForgotpin.Name = "LblForgotpin";
-            this.LblForgotpin.Size = new System.Drawing.Size(61, 13);
-            this.LblForgotpin.TabIndex = 2;
-            this.LblForgotpin.TabStop = true;
-            this.LblForgotpin.Text = "Forgot Pin?";
+            this.BtnRegister.Location = new System.Drawing.Point(57, 99);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(178, 23);
+            this.BtnRegister.TabIndex = 2;
+            this.BtnRegister.Text = "Register";
+            this.BtnRegister.UseVisualStyleBackColor = true;
             // 
-            // BtnLogin
-            // 
-            this.BtnLogin.Location = new System.Drawing.Point(71, 118);
-            this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(122, 23);
-            this.BtnLogin.TabIndex = 3;
-            this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
-            // 
-            // Login
+            // InitialRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 176);
-            this.Controls.Add(this.BtnLogin);
-            this.Controls.Add(this.LblForgotpin);
+            this.ClientSize = new System.Drawing.Size(291, 161);
+            this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.TxtPin);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "Login";
-            this.Text = "Login";
+            this.Name = "InitialRegister";
+            this.Text = "InitialRegister";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +78,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtPin;
-        private System.Windows.Forms.LinkLabel LblForgotpin;
-        private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.Button BtnRegister;
     }
 }
-
