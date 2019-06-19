@@ -53,6 +53,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewCategory";
             this.Text = "ViewCategory";
+            this.Load += new System.EventHandler(this.ViewCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCategory)).EndInit();
             this.ResumeLayout(false);
 

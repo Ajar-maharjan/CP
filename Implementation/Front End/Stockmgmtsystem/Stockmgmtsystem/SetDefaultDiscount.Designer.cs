@@ -68,6 +68,7 @@
             this.BtnSetdiscount.TabIndex = 3;
             this.BtnSetdiscount.Text = "Set Discount";
             this.BtnSetdiscount.UseVisualStyleBackColor = true;
+            this.BtnSetdiscount.Click += new System.EventHandler(this.BtnSetdiscount_Click);
             // 
             // label3
             // 

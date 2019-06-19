@@ -16,5 +16,32 @@ namespace Stockmgmtsystem
         {
             InitializeComponent();
         }
+
+        private bool ComboNull(ComboBox comboBox)
+        {
+            if (string.IsNullOrEmpty(comboBox.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ComboNull(CboEmail))
+                {
+                    throw new Exception("Select Email address");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

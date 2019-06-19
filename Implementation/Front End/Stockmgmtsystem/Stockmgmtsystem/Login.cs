@@ -16,6 +16,7 @@ namespace Stockmgmtsystem
         {
             InitializeComponent();
         }
+
         private bool InputHandle(TextBox textBox)
         {
             if (string.IsNullOrEmpty(textBox.Text))
@@ -26,6 +27,29 @@ namespace Stockmgmtsystem
             {
                 return true;
             }
+        }
+        
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!InputHandle(TxtPin))
+                {
+                    throw new Exception("Please enter pin");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LblForgotpin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecoverAccount recoveraccount = new RecoverAccount();
+            this.Hide();
+            recoveraccount.Show();
         }
     }
 }

@@ -59,15 +59,17 @@
             this.LblForgotpin.TabIndex = 2;
             this.LblForgotpin.TabStop = true;
             this.LblForgotpin.Text = "Forgot Pin?";
+            this.LblForgotpin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblForgotpin_LinkClicked);
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(71, 118);
+            this.BtnLogin.Location = new System.Drawing.Point(78, 118);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(122, 23);
             this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // Login
             // 

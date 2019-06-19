@@ -16,5 +16,32 @@ namespace Stockmgmtsystem
         {
             InitializeComponent();
         }
+
+        private bool InputHandle(TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void BtnAddcat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!InputHandle(TxtCategory))
+                {
+                    throw new Exception("Please enter liquor category");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

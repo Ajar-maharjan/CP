@@ -57,6 +57,7 @@
             this.BtnAddcust.TabIndex = 2;
             this.BtnAddcust.Text = "Add";
             this.BtnAddcust.UseVisualStyleBackColor = true;
+            this.BtnAddcust.Click += new System.EventHandler(this.BtnAddcust_Click);
             // 
             // AddLoyalCustomer
             // 

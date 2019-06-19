@@ -16,5 +16,10 @@ namespace Stockmgmtsystem
         {
             InitializeComponent();
         }
+
+        private void ViewCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Stockmgmtsystem
 {
-    public partial class SetDefaultDiscount : Form
+    public partial class RestockLiquor : Form
     {
-        public SetDefaultDiscount()
+        public RestockLiquor()
         {
             InitializeComponent();
         }
@@ -20,6 +20,18 @@ namespace Stockmgmtsystem
         private bool InputHandle(TextBox textBox)
         {
             if (string.IsNullOrEmpty(textBox.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ComboNull(ComboBox comboBox)
+        {
+            if (string.IsNullOrEmpty(comboBox.Text))
             {
                 return false;
             }
@@ -42,17 +54,21 @@ namespace Stockmgmtsystem
             }
         }
 
-        private void BtnSetdiscount_Click(object sender, EventArgs e)
+        private void BtnRestock_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!InputHandle(TxtDiscountper))
+                if (!ComboNull(CboLiquor))
                 {
-                    throw new Exception("Enter Discount percent");
+                    throw new Exception("Select Liquor");
                 }
-                if (!IsValidNumInt(TxtDiscountper))
+                if (!InputHandle(TxtStockquantity))
                 {
-                    throw new Exception("Invalid Discount percent");
+                    throw new Exception("Enter restock quantity");
+                }
+                if (!IsValidNumInt(TxtStockquantity))
+                {
+                    throw new Exception("Invalid restock quantity");
                 }
 
             }

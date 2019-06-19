@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.CboLoyalcustomer = new System.Windows.Forms.ComboBox();
-            this.CboxApplydiscount = new System.Windows.Forms.CheckBox();
+            this.ChkApplydiscount = new System.Windows.Forms.CheckBox();
             this.CboLiquor = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvBill = new System.Windows.Forms.DataGridView();
@@ -38,7 +38,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtQuantity = new System.Windows.Forms.TextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtCash = new System.Windows.Forms.TextBox();
             this.BtnCreate = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,15 +63,16 @@
             this.CboLoyalcustomer.Size = new System.Drawing.Size(201, 21);
             this.CboLoyalcustomer.TabIndex = 0;
             // 
-            // CboxApplydiscount
+            // ChkApplydiscount
             // 
-            this.CboxApplydiscount.AutoSize = true;
-            this.CboxApplydiscount.Location = new System.Drawing.Point(164, 62);
-            this.CboxApplydiscount.Name = "CboxApplydiscount";
-            this.CboxApplydiscount.Size = new System.Drawing.Size(97, 17);
-            this.CboxApplydiscount.TabIndex = 1;
-            this.CboxApplydiscount.Text = "Apply Discount";
-            this.CboxApplydiscount.UseVisualStyleBackColor = true;
+            this.ChkApplydiscount.AutoSize = true;
+            this.ChkApplydiscount.Location = new System.Drawing.Point(164, 62);
+            this.ChkApplydiscount.Name = "ChkApplydiscount";
+            this.ChkApplydiscount.Size = new System.Drawing.Size(97, 17);
+            this.ChkApplydiscount.TabIndex = 1;
+            this.ChkApplydiscount.Text = "Apply Discount";
+            this.ChkApplydiscount.UseVisualStyleBackColor = true;
+            this.ChkApplydiscount.CheckedChanged += new System.EventHandler(this.CboxApplydiscount_CheckedChanged);
             // 
             // CboLiquor
             // 
@@ -137,13 +138,14 @@
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Add Liquor";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // textBox2
+            // TxtCash
             // 
-            this.textBox2.Location = new System.Drawing.Point(440, 467);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(42, 20);
-            this.textBox2.TabIndex = 7;
+            this.TxtCash.Location = new System.Drawing.Point(440, 467);
+            this.TxtCash.Name = "TxtCash";
+            this.TxtCash.Size = new System.Drawing.Size(42, 20);
+            this.TxtCash.TabIndex = 7;
             // 
             // BtnCreate
             // 
@@ -153,6 +155,7 @@
             this.BtnCreate.TabIndex = 8;
             this.BtnCreate.Text = "Create";
             this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // BtnClose
             // 
@@ -160,8 +163,9 @@
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(75, 23);
             this.BtnClose.TabIndex = 9;
-            this.BtnClose.Text = "Cancel";
+            this.BtnClose.Text = "Close";
             this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // label1
             // 
@@ -270,12 +274,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.BtnCreate);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtCash);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.TxtQuantity);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CboLiquor);
-            this.Controls.Add(this.CboxApplydiscount);
+            this.Controls.Add(this.ChkApplydiscount);
             this.Controls.Add(this.CboLoyalcustomer);
             this.MinimizeBox = false;
             this.Name = "CreateBill";
@@ -290,7 +294,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox CboLoyalcustomer;
-        private System.Windows.Forms.CheckBox CboxApplydiscount;
+        private System.Windows.Forms.CheckBox ChkApplydiscount;
         private System.Windows.Forms.ComboBox CboLiquor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvBill;
@@ -299,7 +303,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.TextBox TxtQuantity;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtCash;
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Label label1;

@@ -45,6 +45,7 @@
             this.BtnViewcategory = new System.Windows.Forms.Button();
             this.BtnAddcategory = new System.Windows.Forms.Button();
             this.Liquor = new System.Windows.Forms.TabPage();
+            this.BtnRestock = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,24 +86,28 @@
             this.setDefaultDiscountToolStripMenuItem.Name = "setDefaultDiscountToolStripMenuItem";
             this.setDefaultDiscountToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.setDefaultDiscountToolStripMenuItem.Text = "Set Default Discount";
+            this.setDefaultDiscountToolStripMenuItem.Click += new System.EventHandler(this.setDefaultDiscountToolStripMenuItem_Click);
             // 
             // createStockReportToolStripMenuItem
             // 
             this.createStockReportToolStripMenuItem.Name = "createStockReportToolStripMenuItem";
             this.createStockReportToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.createStockReportToolStripMenuItem.Text = "Create Stock Report";
+            this.createStockReportToolStripMenuItem.Click += new System.EventHandler(this.createStockReportToolStripMenuItem_Click);
             // 
             // changePinToolStripMenuItem
             // 
             this.changePinToolStripMenuItem.Name = "changePinToolStripMenuItem";
             this.changePinToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.changePinToolStripMenuItem.Text = "Change Pin";
+            this.changePinToolStripMenuItem.Click += new System.EventHandler(this.changePinToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Tab
             // 
@@ -137,6 +142,7 @@
             this.BtnDellcust.TabIndex = 2;
             this.BtnDellcust.Text = "Delete Loyal Customer";
             this.BtnDellcust.UseVisualStyleBackColor = true;
+            this.BtnDellcust.Click += new System.EventHandler(this.BtnDellcust_Click);
             // 
             // BtnAddlcust
             // 
@@ -146,6 +152,7 @@
             this.BtnAddlcust.TabIndex = 1;
             this.BtnAddlcust.Text = "Add Loyal Customer";
             this.BtnAddlcust.UseVisualStyleBackColor = true;
+            this.BtnAddlcust.Click += new System.EventHandler(this.BtnAddlcust_Click);
             // 
             // BtnCreatebill
             // 
@@ -155,6 +162,7 @@
             this.BtnCreatebill.TabIndex = 0;
             this.BtnCreatebill.Text = "Create Bill";
             this.BtnCreatebill.UseVisualStyleBackColor = true;
+            this.BtnCreatebill.Click += new System.EventHandler(this.BtnCreatebill_Click);
             // 
             // Category
             // 
@@ -187,6 +195,7 @@
             this.BtnEditcategory.TabIndex = 2;
             this.BtnEditcategory.Text = "Edit Category";
             this.BtnEditcategory.UseVisualStyleBackColor = true;
+            this.BtnEditcategory.Click += new System.EventHandler(this.BtnEditcategory_Click);
             // 
             // BtnViewcategory
             // 
@@ -196,6 +205,7 @@
             this.BtnViewcategory.TabIndex = 1;
             this.BtnViewcategory.Text = "View Category";
             this.BtnViewcategory.UseVisualStyleBackColor = true;
+            this.BtnViewcategory.Click += new System.EventHandler(this.BtnViewcategory_Click);
             // 
             // BtnAddcategory
             // 
@@ -205,9 +215,11 @@
             this.BtnAddcategory.TabIndex = 0;
             this.BtnAddcategory.Text = "Add Category";
             this.BtnAddcategory.UseVisualStyleBackColor = true;
+            this.BtnAddcategory.Click += new System.EventHandler(this.BtnAddcategory_Click);
             // 
             // Liquor
             // 
+            this.Liquor.Controls.Add(this.BtnRestock);
             this.Liquor.Controls.Add(this.label4);
             this.Liquor.Controls.Add(this.textBox1);
             this.Liquor.Controls.Add(this.label1);
@@ -221,6 +233,16 @@
             this.Liquor.TabIndex = 2;
             this.Liquor.Text = "Liquor";
             this.Liquor.UseVisualStyleBackColor = true;
+            // 
+            // BtnRestock
+            // 
+            this.BtnRestock.Location = new System.Drawing.Point(40, 115);
+            this.BtnRestock.Name = "BtnRestock";
+            this.BtnRestock.Size = new System.Drawing.Size(153, 22);
+            this.BtnRestock.TabIndex = 10;
+            this.BtnRestock.Text = "Restock Liquor";
+            this.BtnRestock.UseVisualStyleBackColor = true;
+            this.BtnRestock.Click += new System.EventHandler(this.BtnRestock_Click);
             // 
             // label4
             // 
@@ -254,21 +276,23 @@
             // 
             // BtnEditlqiquor
             // 
-            this.BtnEditlqiquor.Location = new System.Drawing.Point(40, 172);
+            this.BtnEditlqiquor.Location = new System.Drawing.Point(40, 210);
             this.BtnEditlqiquor.Name = "BtnEditlqiquor";
             this.BtnEditlqiquor.Size = new System.Drawing.Size(153, 23);
             this.BtnEditlqiquor.TabIndex = 5;
             this.BtnEditlqiquor.Text = "Edit Liquor";
             this.BtnEditlqiquor.UseVisualStyleBackColor = true;
+            this.BtnEditlqiquor.Click += new System.EventHandler(this.BtnEditlqiquor_Click);
             // 
             // BtnViewliquor
             // 
-            this.BtnViewliquor.Location = new System.Drawing.Point(40, 122);
+            this.BtnViewliquor.Location = new System.Drawing.Point(40, 160);
             this.BtnViewliquor.Name = "BtnViewliquor";
             this.BtnViewliquor.Size = new System.Drawing.Size(153, 23);
             this.BtnViewliquor.TabIndex = 4;
             this.BtnViewliquor.Text = "View Liquor";
             this.BtnViewliquor.UseVisualStyleBackColor = true;
+            this.BtnViewliquor.Click += new System.EventHandler(this.BtnViewliquor_Click);
             // 
             // btnAddliquor
             // 
@@ -278,6 +302,7 @@
             this.btnAddliquor.TabIndex = 3;
             this.btnAddliquor.Text = "Add Liquor";
             this.btnAddliquor.UseVisualStyleBackColor = true;
+            this.btnAddliquor.Click += new System.EventHandler(this.btnAddliquor_Click);
             // 
             // BtnLogout
             // 
@@ -287,6 +312,7 @@
             this.BtnLogout.TabIndex = 2;
             this.BtnLogout.Text = "Logout";
             this.BtnLogout.UseVisualStyleBackColor = true;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // Home
             // 
@@ -339,5 +365,6 @@
         private System.Windows.Forms.Button BtnViewliquor;
         private System.Windows.Forms.Button btnAddliquor;
         private System.Windows.Forms.Button BtnLogout;
+        private System.Windows.Forms.Button BtnRestock;
     }
 }

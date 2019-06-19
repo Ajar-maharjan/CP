@@ -89,6 +89,7 @@
             this.BtnSearch.TabIndex = 4;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // CboCategory
             // 
@@ -97,6 +98,7 @@
             this.CboCategory.Name = "CboCategory";
             this.CboCategory.Size = new System.Drawing.Size(178, 21);
             this.CboCategory.TabIndex = 5;
+            this.CboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // ViewLiquor
             // 
@@ -112,6 +114,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewLiquor";
             this.Text = "ViewLiquor";
+            this.Load += new System.EventHandler(this.ViewLiquor_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

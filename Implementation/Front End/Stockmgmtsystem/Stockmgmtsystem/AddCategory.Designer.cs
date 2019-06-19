@@ -50,6 +50,7 @@
             this.BtnAddcat.TabIndex = 1;
             this.BtnAddcat.Text = "Add";
             this.BtnAddcat.UseVisualStyleBackColor = true;
+            this.BtnAddcat.Click += new System.EventHandler(this.BtnAddcat_Click);
             // 
             // TxtCategory
             // 

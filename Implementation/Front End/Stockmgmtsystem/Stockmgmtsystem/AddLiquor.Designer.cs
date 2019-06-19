@@ -124,6 +124,7 @@
             this.BtnAdd.TabIndex = 10;
             this.BtnAdd.Text = "Add";
             this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnClose
             // 
@@ -133,6 +134,7 @@
             this.BtnClose.TabIndex = 11;
             this.BtnClose.Text = "Cancel";
             this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // CboCategory
             // 

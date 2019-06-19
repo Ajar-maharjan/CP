@@ -52,6 +52,7 @@
             this.Controls.Add(this.DgvReport);
             this.Name = "StockReport";
             this.Text = "StockReport";
+            this.Load += new System.EventHandler(this.StockReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvReport)).EndInit();
             this.ResumeLayout(false);
 
