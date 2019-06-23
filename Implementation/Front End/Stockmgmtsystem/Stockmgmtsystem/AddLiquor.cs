@@ -12,98 +12,63 @@ namespace Stockmgmtsystem
 {
     public partial class AddLiquor : Form
     {
+        Liquor liquor;
+        LiquorCategory liquorcategory;
+
         public AddLiquor()
         {
             InitializeComponent();
-        }
-
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool ComboNull(ComboBox comboBox)
-        {
-            if (string.IsNullOrEmpty(comboBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsValidNumInt(TextBox textBox)
-        {
-            int parsedValue;
-            if (!int.TryParse(textBox.Text, out parsedValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsValidNumDec(TextBox textBox)
-        {
-            decimal parsedValue;
-            if (!decimal.TryParse(textBox.Text, out parsedValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!InputHandle(TxtLiquor))
+                if (!Global.InputHandle(TxtLiquor))
                 {
                     throw new Exception("Enter Liquor name");
                 }
-                if (!ComboNull(CboCategory))
+                if (!Global.ComboNull(CboCategory))
                 {
                     throw new Exception("Select Liquor Category");
                 }
-                if (!InputHandle(TxtPrice))
+                if (!Global.InputHandle(TxtPrice))
                 {
                     throw new Exception("Enter Liquor price");
                 }
-                if (!IsValidNumDec(TxtPrice))
+                if (!Global.IsValidNumDec(TxtPrice))
                 {
                     throw new Exception("Invalid Liquor price");
                 }
-                if (!InputHandle(TxtQuantity))
+                if (!Global.InputHandle(TxtQuantity))
                 {
                     throw new Exception("Enter Liquor quantity");
                 }
-                if (!IsValidNumInt(TxtQuantity))
+                if (!Global.IsValidNumInt(TxtQuantity))
                 {
                     throw new Exception("Invalid Liquor quantity");
                 }
-                if (!InputHandle(TxtThreshold))
+                if (!Global.InputHandle(TxtThreshold))
                 {
                     throw new Exception("Enter Liquor quantity threshold");
                 }
-                if (!IsValidNumInt(TxtThreshold))
+                if (!Global.IsValidNumInt(TxtThreshold))
                 {
                     throw new Exception("Invalid liquor quantity threshold");
                 }
-                
+                liquor = new Liquor();
+                liquor.LiquorName = TxtLiquor.Text;
+                liquor.CategoryId = Convert.ToInt32(CboCategory.SelectedValue);
+                liquor.LiquorPrice = decimal.Parse(TxtPrice.Text);
+                liquor.LiquorQuantity = int.Parse(TxtQuantity.Text);
+                liquor.ThresholdQuantity = int.Parse(TxtThreshold.Text);
+                bool flag = liquor.AddLiquor();
+                if (flag == true)
+                {
+                    MessageBox.Show("Liquor added successfully");
+                }
+                else
+                    MessageBox.Show("Liquor name already exist");
             }
             catch (Exception ex)
             {
@@ -114,6 +79,19 @@ namespace Stockmgmtsystem
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddLiquor_Load(object sender, EventArgs e)
+        {
+            LoadCategoryCbo();
+        }
+
+        private void LoadCategoryCbo()
+        {
+            liquorcategory = new LiquorCategory();
+            CboCategory.DisplayMember = "CategoryName";
+            CboCategory.ValueMember = "CategoryId";
+            CboCategory.DataSource = liquorcategory.ViewCategory().Tables["LiquorCategory"];
         }
     }
 }

@@ -138,6 +138,7 @@
             // 
             // CboCategory
             // 
+            this.CboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategory.FormattingEnabled = true;
             this.CboCategory.Location = new System.Drawing.Point(137, 72);
             this.CboCategory.Name = "CboCategory";
@@ -173,7 +174,9 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AddLiquor";
-            this.Text = "AddLiquor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Liquor";
+            this.Load += new System.EventHandler(this.AddLiquor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

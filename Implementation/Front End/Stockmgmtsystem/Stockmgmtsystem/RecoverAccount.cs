@@ -12,32 +12,29 @@ namespace Stockmgmtsystem
 {
     public partial class RecoverAccount : Form
     {
+        Login login;
+        User user;
+
         public RecoverAccount()
         {
             InitializeComponent();
-        }
-
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         private void BtnRecoverpin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!InputHandle(TxtRecoverycode))
+                if (!Global.InputHandle(TxtRecoverycode))
                 {
                     throw new Exception("Enter recoveryCode");
                 }
-
+                user = new User();
+                user.RecoveryCode = TxtRecoverycode.Text;
+                bool flag = user.ForgotPin();
+                if (flag == true)
+                    MessageBox.Show("Your pin is " + user.Pin);
+                else
+                    MessageBox.Show("Invalid recovery code");
             }
             catch (Exception ex)
             {
@@ -47,9 +44,9 @@ namespace Stockmgmtsystem
 
         private void LblreturnLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            login = new Login();
             this.Close();
+            login.Show();
         }
     }
 }

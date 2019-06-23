@@ -82,7 +82,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "RecoverAccount";
-            this.Text = "RecoverAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Recover Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 

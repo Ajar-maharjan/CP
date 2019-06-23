@@ -12,6 +12,8 @@ namespace Stockmgmtsystem
 {
     public partial class ViewCategory : Form
     {
+        LiquorCategory liquorcategory;
+
         public ViewCategory()
         {
             InitializeComponent();
@@ -19,7 +21,10 @@ namespace Stockmgmtsystem
 
         private void ViewCategory_Load(object sender, EventArgs e)
         {
-
+            liquorcategory = new LiquorCategory();
+            DgvCategory.DataMember = "LiquorCategory";
+            DgvCategory.DataSource = liquorcategory.ViewCategory().Tables["LiquorCategory"];
+            DgvCategory.Columns[0].Visible = false;
         }
     }
 }

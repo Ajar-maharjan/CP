@@ -33,9 +33,6 @@
             this.CboLiquor = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgvBill = new System.Windows.Forms.DataGridView();
-            this.LiquorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtQuantity = new System.Windows.Forms.TextBox();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.TxtCash = new System.Windows.Forms.TextBox();
@@ -51,31 +48,40 @@
             this.label8 = new System.Windows.Forms.Label();
             this.LblChange = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LblDiscount = new System.Windows.Forms.Label();
+            this.LiquorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LiquorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBill)).BeginInit();
             this.SuspendLayout();
             // 
             // CboLoyalcustomer
             // 
+            this.CboLoyalcustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboLoyalcustomer.FormattingEnabled = true;
             this.CboLoyalcustomer.Location = new System.Drawing.Point(164, 23);
             this.CboLoyalcustomer.Name = "CboLoyalcustomer";
             this.CboLoyalcustomer.Size = new System.Drawing.Size(201, 21);
             this.CboLoyalcustomer.TabIndex = 0;
+            this.CboLoyalcustomer.SelectedIndexChanged += new System.EventHandler(this.CboLoyalcustomer_SelectedIndexChanged);
             // 
             // ChkApplydiscount
             // 
             this.ChkApplydiscount.AutoSize = true;
-            this.ChkApplydiscount.Location = new System.Drawing.Point(164, 62);
+            this.ChkApplydiscount.Location = new System.Drawing.Point(258, 498);
             this.ChkApplydiscount.Name = "ChkApplydiscount";
             this.ChkApplydiscount.Size = new System.Drawing.Size(97, 17);
             this.ChkApplydiscount.TabIndex = 1;
             this.ChkApplydiscount.Text = "Apply Discount";
             this.ChkApplydiscount.UseVisualStyleBackColor = true;
-            this.ChkApplydiscount.CheckedChanged += new System.EventHandler(this.CboxApplydiscount_CheckedChanged);
+            this.ChkApplydiscount.CheckedChanged += new System.EventHandler(this.ChkApplydiscount_CheckedChanged);
             // 
             // CboLiquor
             // 
+            this.CboLiquor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboLiquor.FormattingEnabled = true;
             this.CboLiquor.Location = new System.Drawing.Point(164, 120);
             this.CboLiquor.Name = "CboLiquor";
@@ -92,36 +98,22 @@
             // 
             // DgvBill
             // 
+            this.DgvBill.AllowUserToAddRows = false;
+            this.DgvBill.AllowUserToDeleteRows = false;
             this.DgvBill.AllowUserToResizeColumns = false;
             this.DgvBill.AllowUserToResizeRows = false;
             this.DgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LiquorId,
             this.LiquorName,
             this.Quantity,
             this.Price});
             this.DgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvBill.Location = new System.Drawing.Point(0, 0);
             this.DgvBill.Name = "DgvBill";
+            this.DgvBill.ReadOnly = true;
             this.DgvBill.Size = new System.Drawing.Size(492, 228);
             this.DgvBill.TabIndex = 0;
-            // 
-            // LiquorName
-            // 
-            this.LiquorName.HeaderText = "Liquor Name";
-            this.LiquorName.Name = "LiquorName";
-            this.LiquorName.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
             // 
             // TxtQuantity
             // 
@@ -149,7 +141,7 @@
             // 
             // BtnCreate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(356, 532);
+            this.BtnCreate.Location = new System.Drawing.Point(356, 559);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(75, 23);
             this.BtnCreate.TabIndex = 8;
@@ -159,7 +151,7 @@
             // 
             // BtnClose
             // 
-            this.BtnClose.Location = new System.Drawing.Point(47, 532);
+            this.BtnClose.Location = new System.Drawing.Point(50, 559);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(75, 23);
             this.BtnClose.TabIndex = 9;
@@ -242,7 +234,7 @@
             // LblChange
             // 
             this.LblChange.AutoSize = true;
-            this.LblChange.Location = new System.Drawing.Point(437, 497);
+            this.LblChange.Location = new System.Drawing.Point(437, 524);
             this.LblChange.Name = "LblChange";
             this.LblChange.Size = new System.Drawing.Size(31, 13);
             this.LblChange.TabIndex = 18;
@@ -251,17 +243,62 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(381, 497);
+            this.label10.Location = new System.Drawing.Point(381, 524);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 13);
             this.label10.TabIndex = 19;
             this.label10.Text = "Change :";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(376, 499);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Discount :";
+            // 
+            // LblDiscount
+            // 
+            this.LblDiscount.AutoSize = true;
+            this.LblDiscount.Location = new System.Drawing.Point(437, 499);
+            this.LblDiscount.Name = "LblDiscount";
+            this.LblDiscount.Size = new System.Drawing.Size(31, 13);
+            this.LblDiscount.TabIndex = 21;
+            this.LblDiscount.Text = "0000";
+            // 
+            // LiquorId
+            // 
+            this.LiquorId.HeaderText = "Column1";
+            this.LiquorId.Name = "LiquorId";
+            this.LiquorId.ReadOnly = true;
+            this.LiquorId.Visible = false;
+            // 
+            // LiquorName
+            // 
+            this.LiquorName.HeaderText = "Liquor Name";
+            this.LiquorName.Name = "LiquorName";
+            this.LiquorName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // CreateBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 590);
+            this.ClientSize = new System.Drawing.Size(516, 622);
+            this.Controls.Add(this.LblDiscount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.LblChange);
             this.Controls.Add(this.label8);
@@ -283,7 +320,9 @@
             this.Controls.Add(this.CboLoyalcustomer);
             this.MinimizeBox = false;
             this.Name = "CreateBill";
-            this.Text = "CreateBill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create Bill";
+            this.Load += new System.EventHandler(this.CreateBill_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvBill)).EndInit();
             this.ResumeLayout(false);
@@ -298,9 +337,6 @@
         private System.Windows.Forms.ComboBox CboLiquor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DgvBill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LiquorName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.TextBox TxtQuantity;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.TextBox TxtCash;
@@ -316,5 +352,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LblChange;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LblDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LiquorId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LiquorName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }

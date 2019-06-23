@@ -10,55 +10,186 @@ namespace Stockmgmtsystem
 {
     class Liquor: DbConnect
     {
+        public int LiquorId { get; set; }
         public string LiquorName { get; set; }
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public decimal LiquorPrice { get; set; }
         public int LiquorQuantity { get; set; }
         public int ThresholdQuantity { get; set; }
 
+        DbConnect db;
+
         public bool AddLiquor()
         {
-            return false;
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Liquor where LiquorName = '" + LiquorName + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count == 0)
+            {
+                string query2 = "insert into Liquor values ('" + LiquorName + "'," +
+                            "" + LiquorPrice + "," + CategoryId + ")";
+                string query3 = "insert into LiquorQuantity (LiquorId,Quantity,Threshold) " +
+                            "select Liquor.LiquorId ,"+ LiquorQuantity + "," +
+                            "" + ThresholdQuantity + " from Liquor where " +
+                            "Liquor.LiquorName ='" + LiquorName+"'";
+                manipulate(query2);
+                manipulate(query3);
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool DeleteLiquor()
         {
-            return false;
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Liquor where LiquorName = '" + LiquorName + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count > 0)
+            {
+                string query2 = "delete from LiquorQuantity where LiquorId= " + LiquorId;
+                string query3 = "delete from Liquor where LiquorId = " + LiquorId;
+                manipulate(query2);
+                manipulate(query3);
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool UpdateLiquor()
         {
-            return false;
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Liquor where liquorName = '" + LiquorName + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count == 0)
+            {
+                string query2 = "update Liquor set LiquorName = '" + LiquorName +"', LiquorPrice =" + LiquorPrice + "," +
+                            "CategoryId =" + CategoryId + " where LiquorId =" + LiquorId ;
+                string query3 = "update LiquorQuantity set Quantity = '" + LiquorQuantity + "', " +
+                            "Threshold =" + ThresholdQuantity + " where LiquorId =" + LiquorId;
+                manipulate(query2);
+                manipulate(query3);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool RestockLiquor()
+        {
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Liquor where liquorName = '" + LiquorName + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count > 0)
+            {
+                string query2 = "update LiquorQuantity set Quantity = Quantity + " +
+                            "" + LiquorQuantity +" where LiquorId =" + LiquorId;
+                manipulate(query2);
+                return true;
+            }
+            else
+                return false;
         }
 
         public DataSet ViewLiquor()
         {
-            DataSet ds = new DataSet();
+            db = new DbConnect();
+            DataSet ds;
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
+                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId";
+            string table = "Liquor";
+            ds = db.list(query, table);
             return ds;
         }
-
-        public void NotifyStockStatus()
+        
+        public DataTable GetLiquor()
         {
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
+                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
+                        "where L.LiquorId = " + LiquorId;
+            dt = db.select(query);
+            return dt;
+        }
 
+        public DataTable GetLiquorPrice()
+        {
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select LiquorPrice from Liquor where LiquorId = " + LiquorId;
+            dt = db.select(query);
+            return dt;
+        }
+
+        public DataSet NotifyStockStatus()
+        {
+            db = new DbConnect();
+            DataSet ds;
+            string query = " select L.LiquorName as Stock_below_threshold from Liquor " +
+                       "L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                       "where Q.Quantity < Q.threshold";
+            string table = "Liquor";
+            ds = db.list(query, table);
+            return ds;
         }
 
         public DataSet CreateReport()
         {
-            DataSet ds = new DataSet();
+            db = new DbConnect();
+            DataSet ds;
+            string query = " select L.LiquorName , Count(B.LiquorId) as Total_bought_Liquor " +
+                        "from LiquorBill B  inner join Liquor L on L.LiquorId = B.LiquorId " +
+                        "group by L.LiquorName";
+            string table = "Liquor";
+            ds = db.list(query, table);
             return ds;
         }
 
-        public DataSet SearchLiquor()
+        public DataSet SearchLiquor(string liquorname)
         {
-            DataSet ds = new DataSet();
+            db = new DbConnect();
+            DataSet ds;
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
+                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
+                        "where L.LiquorName Like '%"+ liquorname +"%'";
+            string table = "Liquor";
+            ds = db.list(query, table);
             return ds;
         }
 
         public DataSet FilterLiquorCategory()
         {
-            DataSet ds = new DataSet();
+            db = new DbConnect();
+            DataSet ds;
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
+                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
+                        "where C.CategoryId = "+CategoryId;
+            string table = "Liquor";
+            ds = db.list(query, table);
             return ds;
         }
 
+        public DataSet SearchLiquorCategory(string liquorname,int categoryid)
+        {
+            db = new DbConnect();
+            DataSet ds;
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
+                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
+                        "where C.CategoryId = " + categoryid + "and L.LiquorName Like '%" + liquorname + "%'";
+            string table = "Liquor";
+            ds = db.list(query, table);
+            return ds;
+        }
     }
 }

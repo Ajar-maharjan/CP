@@ -10,33 +10,77 @@ namespace Stockmgmtsystem
 {
     class User :DbConnect
     {
-        String loggedPin;
         public string Pin { get; set; }
+        public string OldPin { get; set; }
         public string RecoveryCode { get; set; }
+
+        DbConnect db;
 
         public bool Login()
         {
-            return false;
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Users where Pin='" + Pin + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
 
-        public void Logout()
-        {
-            loggedPin = "";
-        }
-        
         public String Register()
         {
-            return "";
+            db = new DbConnect();
+            RecoveryCode = CreateRecoveryCode();
+            string query = "insert into Users values ('" + Pin + "','" + RecoveryCode + "')";
+            db.manipulate(query);
+            return RecoveryCode;
         }
 
-        public string ForgotPin()
+        public bool ChangePin()
         {
-            return "";
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Users where Pin = '" + OldPin + "'" +
+                "           And RecoveryCode ='" + RecoveryCode + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count > 0)
+            {
+                string query2 = "update Users set Pin = '" + Pin + "' " +
+                           "where Pin = '" + OldPin + "'And RecoveryCode ='" + RecoveryCode + "'";
+                manipulate(query2);
+                return true;
+            }
+            else
+                return false; 
+        }
+
+        public bool ForgotPin()
+        {
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select Pin from Users where RecoveryCode ='" + RecoveryCode + "'";
+            dt = db.select(query);
+            if (dt.Rows.Count > 0)
+            {
+                string code = dt.Rows[0][0].ToString();
+                Pin = code;
+                return true;
+            }
+            else
+                return false;
         }
 
         public bool CheckUserExist()
         {
-            return false;
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select * from Users";
+            dt = db.select(query);
+            if (dt.Rows.Count == 0)
+                return true;
+            else
+                return false;
         }
 
         private string CreateRecoveryCode()

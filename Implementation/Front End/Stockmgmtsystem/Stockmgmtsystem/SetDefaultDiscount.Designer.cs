@@ -91,7 +91,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "SetDefaultDiscount";
-            this.Text = "SetDefaultDiscount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Set Default Discount";
             this.ResumeLayout(false);
             this.PerformLayout();
 

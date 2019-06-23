@@ -17,44 +17,24 @@ namespace Stockmgmtsystem
             InitializeComponent();
         }
 
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsValidNumInt(TextBox textBox)
-        {
-            int parsedValue;
-            if (!int.TryParse(textBox.Text, out parsedValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        Bill bill;
 
         private void BtnSetdiscount_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!InputHandle(TxtDiscountper))
+                if (!Global.InputHandle(TxtDiscountper))
                 {
                     throw new Exception("Enter Discount percent");
                 }
-                if (!IsValidNumInt(TxtDiscountper))
+                if (!Global.IsValidNumInt(TxtDiscountper))
                 {
                     throw new Exception("Invalid Discount percent");
                 }
-
+                bill = new Bill();
+                bill.DefaultDiscount = int.Parse(TxtDiscountper.Text);
+                bill.SetDefaultDiscount();
+                MessageBox.Show("Default discount changed");
             }
             catch (Exception ex)
             {

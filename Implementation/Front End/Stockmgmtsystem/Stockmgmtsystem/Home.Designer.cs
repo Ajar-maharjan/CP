@@ -47,17 +47,18 @@
             this.Liquor = new System.Windows.Forms.TabPage();
             this.BtnRestock = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnEditlqiquor = new System.Windows.Forms.Button();
             this.BtnViewliquor = new System.Windows.Forms.Button();
             this.btnAddliquor = new System.Windows.Forms.Button();
             this.BtnLogout = new System.Windows.Forms.Button();
+            this.DgvStockStatus = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.Tab.SuspendLayout();
             this.Main.SuspendLayout();
             this.Category.SuspendLayout();
             this.Liquor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStockStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -219,9 +220,9 @@
             // 
             // Liquor
             // 
+            this.Liquor.Controls.Add(this.DgvStockStatus);
             this.Liquor.Controls.Add(this.BtnRestock);
             this.Liquor.Controls.Add(this.label4);
-            this.Liquor.Controls.Add(this.textBox1);
             this.Liquor.Controls.Add(this.label1);
             this.Liquor.Controls.Add(this.BtnEditlqiquor);
             this.Liquor.Controls.Add(this.BtnViewliquor);
@@ -252,18 +253,6 @@
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Stock Status";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(232, 24);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(224, 257);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.WordWrap = false;
             // 
             // label1
             // 
@@ -314,6 +303,17 @@
             this.BtnLogout.UseVisualStyleBackColor = true;
             this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
+            // DgvStockStatus
+            // 
+            this.DgvStockStatus.AllowUserToAddRows = false;
+            this.DgvStockStatus.AllowUserToDeleteRows = false;
+            this.DgvStockStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvStockStatus.Location = new System.Drawing.Point(228, 24);
+            this.DgvStockStatus.Name = "DgvStockStatus";
+            this.DgvStockStatus.ReadOnly = true;
+            this.DgvStockStatus.Size = new System.Drawing.Size(229, 260);
+            this.DgvStockStatus.TabIndex = 11;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +325,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -334,6 +335,7 @@
             this.Category.PerformLayout();
             this.Liquor.ResumeLayout(false);
             this.Liquor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStockStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,12 +361,12 @@
         private System.Windows.Forms.Button BtnAddcategory;
         private System.Windows.Forms.TabPage Liquor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnEditlqiquor;
         private System.Windows.Forms.Button BtnViewliquor;
         private System.Windows.Forms.Button btnAddliquor;
         private System.Windows.Forms.Button BtnLogout;
         private System.Windows.Forms.Button BtnRestock;
+        private System.Windows.Forms.DataGridView DgvStockStatus;
     }
 }

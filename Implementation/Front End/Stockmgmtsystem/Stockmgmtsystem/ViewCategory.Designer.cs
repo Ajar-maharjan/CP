@@ -36,6 +36,7 @@
             // 
             this.DgvCategory.AllowUserToAddRows = false;
             this.DgvCategory.AllowUserToDeleteRows = false;
+            this.DgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvCategory.Location = new System.Drawing.Point(0, 0);
@@ -52,7 +53,8 @@
             this.Controls.Add(this.DgvCategory);
             this.MaximizeBox = false;
             this.Name = "ViewCategory";
-            this.Text = "ViewCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Liquor Category";
             this.Load += new System.EventHandler(this.ViewCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCategory)).EndInit();
             this.ResumeLayout(false);

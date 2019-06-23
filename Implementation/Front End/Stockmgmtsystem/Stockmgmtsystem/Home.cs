@@ -37,30 +37,28 @@ namespace Stockmgmtsystem
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            
-            User user = new User();
-            user.Logout();
             Login login = new Login();
             this.Hide();
-            login.Show();
+            login.ShowDialog();
+            this.Close();
         }
 
         private void setDefaultDiscountToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetDefaultDiscount setdefaultdiscount = new SetDefaultDiscount();
-            setdefaultdiscount.Show();
+            setdefaultdiscount.ShowDialog();
         }
 
         private void createStockReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StockReport stockreport = new StockReport();
-            stockreport.Show();
+            stockreport.ShowDialog();
         }
 
         private void changePinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangePin changepin = new ChangePin();
-            changepin.Show();
+            changepin.ShowDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

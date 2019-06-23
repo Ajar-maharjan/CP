@@ -96,6 +96,7 @@
     <Compile Include="EditLiquor.Designer.cs">
       <DependentUpon>EditLiquor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>

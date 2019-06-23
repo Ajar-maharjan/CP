@@ -89,7 +89,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RestockLiquor";
-            this.Text = "RestockLiquor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restock Liquor";
+            this.Load += new System.EventHandler(this.RestockLiquor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

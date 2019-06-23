@@ -69,7 +69,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AddCategory";
-            this.Text = "AddCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Liquor Category";
             this.ResumeLayout(false);
             this.PerformLayout();
 

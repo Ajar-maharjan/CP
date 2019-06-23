@@ -58,6 +58,7 @@
             // 
             // CboCategory
             // 
+            this.CboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategory.FormattingEnabled = true;
             this.CboCategory.Location = new System.Drawing.Point(143, 135);
             this.CboCategory.Name = "CboCategory";
@@ -174,6 +175,7 @@
             this.CboLiquor.Name = "CboLiquor";
             this.CboLiquor.Size = new System.Drawing.Size(121, 21);
             this.CboLiquor.TabIndex = 1;
+            this.CboLiquor.SelectedIndexChanged += new System.EventHandler(this.CboLiquor_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -217,7 +219,9 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "EditLiquor";
-            this.Text = "EditLiquor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Liquor";
+            this.Load += new System.EventHandler(this.EditLiquor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

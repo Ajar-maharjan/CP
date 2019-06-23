@@ -11,7 +11,6 @@ namespace Stockmgmtsystem
     class DbConnect
     {
         SqlConnection con;
-        DataTable dt;
         DataSet ds;
         SqlDataAdapter da;
 
@@ -20,21 +19,29 @@ namespace Stockmgmtsystem
             con = new SqlConnection("Data Source=.;Initial Catalog=stockmgmtsystem;Integrated Security=True");
 
         }
-        public void insert(string query)
+        public void manipulate (string query)
         {
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-
         }
+
         public DataTable select(string query)
         {
             ds = new DataSet();
             da = new SqlDataAdapter(query, con);
             da.Fill(ds);
             return ds.Tables[0];
+        }
+
+        public DataSet list(string query,string table)
+        {
+            ds = new DataSet();
+            da = new SqlDataAdapter(query, con);
+            da.Fill(ds,table);
+            return ds;
         }
     }
 }

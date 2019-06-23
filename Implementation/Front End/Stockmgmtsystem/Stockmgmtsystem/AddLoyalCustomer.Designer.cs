@@ -69,7 +69,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AddLoyalCustomer";
-            this.Text = "AddLoyalCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Loyal Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

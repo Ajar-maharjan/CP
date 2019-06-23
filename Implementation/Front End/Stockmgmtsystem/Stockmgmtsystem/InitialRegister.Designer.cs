@@ -89,7 +89,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "InitialRegister";
-            this.Text = "InitialRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Initial Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 

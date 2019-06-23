@@ -12,30 +12,23 @@ namespace Stockmgmtsystem
 {
     public partial class InitialRegister : Form
     {
+        User user;
+        Login login;
+
         public InitialRegister()
         {
             InitializeComponent();
         }
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        
         private void BtnRegister_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!InputHandle(TxtPin))
+                if (!Global.InputHandle(TxtPin))
                 {
                     throw new Exception("Enter pin");
                 }
-                if (!InputHandle(TxtRepin))
+                if (!Global.InputHandle(TxtRepin))
                 {
                     throw new Exception("Enter Re-enter pin");
                 }
@@ -43,6 +36,14 @@ namespace Stockmgmtsystem
                 {
                     throw new Exception("Re-enter pin is inccorrect");
                 }
+                user = new User();
+                user.Pin = TxtPin.Text;
+                string recovery = user.Register();
+                MessageBox.Show("User registered."+ Environment.NewLine + "Your Recovery code is " + recovery + Environment.NewLine + "(Code is copied in clipboard)");
+                Clipboard.SetText(recovery);
+                this.Hide();
+                login = new Login();
+                login.Show();
             }
             catch (Exception ex)
             {

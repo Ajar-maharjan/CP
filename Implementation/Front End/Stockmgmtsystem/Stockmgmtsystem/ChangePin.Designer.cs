@@ -109,7 +109,8 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "ChangePin";
-            this.Text = "ChangePin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Change Pin";
             this.ResumeLayout(false);
             this.PerformLayout();
 

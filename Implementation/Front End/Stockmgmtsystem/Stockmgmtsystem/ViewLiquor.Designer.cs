@@ -30,13 +30,14 @@
         {
             this.TxtLiquor = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvLiquor = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.CboCategory = new System.Windows.Forms.ComboBox();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLiquor)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtLiquor
@@ -48,20 +49,24 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.DgvLiquor);
             this.panel1.Location = new System.Drawing.Point(1, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 452);
             this.panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // DgvLiquor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(689, 452);
-            this.dataGridView1.TabIndex = 0;
+            this.DgvLiquor.AllowUserToAddRows = false;
+            this.DgvLiquor.AllowUserToDeleteRows = false;
+            this.DgvLiquor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvLiquor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvLiquor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvLiquor.Location = new System.Drawing.Point(0, 0);
+            this.DgvLiquor.Name = "DgvLiquor";
+            this.DgvLiquor.ReadOnly = true;
+            this.DgvLiquor.Size = new System.Drawing.Size(689, 452);
+            this.DgvLiquor.TabIndex = 0;
             // 
             // label1
             // 
@@ -93,6 +98,7 @@
             // 
             // CboCategory
             // 
+            this.CboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategory.FormattingEnabled = true;
             this.CboCategory.Location = new System.Drawing.Point(162, 69);
             this.CboCategory.Name = "CboCategory";
@@ -100,11 +106,22 @@
             this.CboCategory.TabIndex = 5;
             this.CboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
+            // BtnClear
+            // 
+            this.BtnClear.Location = new System.Drawing.Point(358, 67);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(75, 23);
+            this.BtnClear.TabIndex = 6;
+            this.BtnClear.Text = "Clear";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
             // ViewLiquor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 553);
+            this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.CboCategory);
             this.Controls.Add(this.BtnSearch);
             this.Controls.Add(this.label2);
@@ -113,10 +130,11 @@
             this.Controls.Add(this.TxtLiquor);
             this.MaximizeBox = false;
             this.Name = "ViewLiquor";
-            this.Text = "ViewLiquor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View Liquor";
             this.Load += new System.EventHandler(this.ViewLiquor_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLiquor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,10 +144,11 @@
 
         private System.Windows.Forms.TextBox TxtLiquor;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvLiquor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.ComboBox CboCategory;
+        private System.Windows.Forms.Button BtnClear;
     }
 }

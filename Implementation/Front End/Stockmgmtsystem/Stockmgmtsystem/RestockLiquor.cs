@@ -17,65 +17,53 @@ namespace Stockmgmtsystem
             InitializeComponent();
         }
 
-        private bool InputHandle(TextBox textBox)
-        {
-            if (string.IsNullOrEmpty(textBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool ComboNull(ComboBox comboBox)
-        {
-            if (string.IsNullOrEmpty(comboBox.Text))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool IsValidNumInt(TextBox textBox)
-        {
-            int parsedValue;
-            if (!int.TryParse(textBox.Text, out parsedValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        Liquor liquor;
 
         private void BtnRestock_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!ComboNull(CboLiquor))
+                if (!Global.ComboNull(CboLiquor))
                 {
                     throw new Exception("Select Liquor");
                 }
-                if (!InputHandle(TxtStockquantity))
+                if (!Global.InputHandle(TxtStockquantity))
                 {
                     throw new Exception("Enter restock quantity");
                 }
-                if (!IsValidNumInt(TxtStockquantity))
+                if (!Global.IsValidNumInt(TxtStockquantity))
                 {
                     throw new Exception("Invalid restock quantity");
                 }
-
+                liquor = new Liquor();
+                liquor.LiquorId = Convert.ToInt32(CboLiquor.SelectedValue);
+                liquor.LiquorName = CboLiquor.Text;
+                liquor.LiquorQuantity = int.Parse(TxtStockquantity.Text);
+                bool flag = liquor.RestockLiquor();
+                if (flag)
+                {
+                    MessageBox.Show("Selected liquor restocked");
+                }
+                else
+                    MessageBox.Show("Liquor does not exist");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void RestockLiquor_Load(object sender, EventArgs e)
+        {
+            LoadLiquorCbo();
+        }
+
+        private void LoadLiquorCbo()
+        {
+            liquor = new Liquor();
+            CboLiquor.DisplayMember = "LiquorName";
+            CboLiquor.ValueMember = "LiquorId";
+            CboLiquor.DataSource = liquor.ViewLiquor().Tables["Liquor"];
         }
     }
 }

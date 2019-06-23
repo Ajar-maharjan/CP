@@ -17,9 +17,14 @@ namespace Stockmgmtsystem
             InitializeComponent();
         }
 
+        Liquor liquor;
+
         private void StockReport_Load(object sender, EventArgs e)
         {
-
+            liquor = new Liquor();
+            DgvReport.DataMember = "Liquor";
+            DgvReport.DataSource = liquor.CreateReport().Tables["Liquor"];
         }
+
     }
 }
