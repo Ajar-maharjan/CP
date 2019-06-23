@@ -15,6 +15,9 @@ namespace Stockmgmtsystem
         public Home()
         {
             InitializeComponent();
+            Load += new EventHandler(Home_Load);
+            panelcategory.Location = panelmain.Location;
+            panelliquor.Location = panelmain.Location;
         }
 
         private void BtnCreatebill_Click(object sender, EventArgs e)
@@ -106,6 +109,44 @@ namespace Stockmgmtsystem
         {
             RestockLiquor restockliquor = new RestockLiquor();
             restockliquor.Show();
+        }
+
+        private void BtnMain_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panelmain.Visible = true;
+        }
+
+        private void BtnCategory_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panelcategory.Visible = true;
+        }
+
+        private void BtnLiquor_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panelliquor.Visible = true;
+            Loadstockstatus();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            hidePanels();
+            panelmain.Visible = true;
+        }
+
+        public void hidePanels()
+        {
+            panelmain.Visible = false;
+            panelcategory.Visible = false;
+            panelliquor.Visible = false;
+        }
+
+        private void Loadstockstatus()
+        {
+            Liquor liquor = new Liquor();
+            DgvStockStatus.DataSource = liquor.NotifyStockStatus().Tables["Liquor"];
         }
     }
 }

@@ -25,6 +25,5 @@ namespace Stockmgmtsystem
             DgvReport.DataMember = "Liquor";
             DgvReport.DataSource = liquor.CreateReport().Tables["Liquor"];
         }
-
     }
 }

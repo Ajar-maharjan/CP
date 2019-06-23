@@ -59,13 +59,18 @@ namespace Stockmgmtsystem
                 return false;
         }
 
-        public bool UpdateLiquor()
+        public bool UpdateLiquor(bool flag)
         {
             db = new DbConnect();
             DataTable dt;
-            string query = "select * from Liquor where liquorName = '" + LiquorName + "'";
-            dt = db.select(query);
-            if (dt.Rows.Count == 0)
+            int count = 0;
+            if (!flag)
+            {
+                string query = "select * from Liquor where liquorName = '" + LiquorName + "'";
+                dt = db.select(query);
+                count = dt.Rows.Count;
+            }
+            if (count == 0)
             {
                 string query2 = "update Liquor set LiquorName = '" + LiquorName +"', LiquorPrice =" + LiquorPrice + "," +
                             "CategoryId =" + CategoryId + " where LiquorId =" + LiquorId ;

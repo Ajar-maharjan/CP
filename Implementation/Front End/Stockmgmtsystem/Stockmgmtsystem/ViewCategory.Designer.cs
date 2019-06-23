@@ -37,6 +37,7 @@
             this.DgvCategory.AllowUserToAddRows = false;
             this.DgvCategory.AllowUserToDeleteRows = false;
             this.DgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvCategory.BackgroundColor = System.Drawing.Color.SeaShell;
             this.DgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvCategory.Location = new System.Drawing.Point(0, 0);

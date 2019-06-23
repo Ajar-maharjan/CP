@@ -42,9 +42,11 @@
             // 
             // TxtLiquor
             // 
-            this.TxtLiquor.Location = new System.Drawing.Point(162, 32);
+            this.TxtLiquor.BackColor = System.Drawing.Color.Snow;
+            this.TxtLiquor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtLiquor.Location = new System.Drawing.Point(210, 32);
             this.TxtLiquor.Name = "TxtLiquor";
-            this.TxtLiquor.Size = new System.Drawing.Size(178, 20);
+            this.TxtLiquor.Size = new System.Drawing.Size(178, 23);
             this.TxtLiquor.TabIndex = 0;
             // 
             // panel1
@@ -60,6 +62,7 @@
             this.DgvLiquor.AllowUserToAddRows = false;
             this.DgvLiquor.AllowUserToDeleteRows = false;
             this.DgvLiquor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvLiquor.BackgroundColor = System.Drawing.Color.SeaShell;
             this.DgvLiquor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvLiquor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvLiquor.Location = new System.Drawing.Point(0, 0);
@@ -71,55 +74,68 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
             this.label1.Location = new System.Drawing.Point(37, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.Size = new System.Drawing.Size(158, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Search By Liquor Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 72);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(75, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(120, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Filter By Category";
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(358, 32);
+            this.BtnSearch.BackColor = System.Drawing.Color.Snow;
+            this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearch.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnSearch.Location = new System.Drawing.Point(413, 29);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(75, 23);
+            this.BtnSearch.Size = new System.Drawing.Size(81, 29);
             this.BtnSearch.TabIndex = 4;
             this.BtnSearch.Text = "Search";
-            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // CboCategory
             // 
+            this.CboCategory.BackColor = System.Drawing.Color.Snow;
             this.CboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboCategory.FormattingEnabled = true;
-            this.CboCategory.Location = new System.Drawing.Point(162, 69);
+            this.CboCategory.Location = new System.Drawing.Point(210, 67);
             this.CboCategory.Name = "CboCategory";
-            this.CboCategory.Size = new System.Drawing.Size(178, 21);
+            this.CboCategory.Size = new System.Drawing.Size(178, 24);
             this.CboCategory.TabIndex = 5;
             this.CboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // BtnClear
             // 
-            this.BtnClear.Location = new System.Drawing.Point(358, 67);
+            this.BtnClear.BackColor = System.Drawing.Color.Snow;
+            this.BtnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClear.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnClear.Location = new System.Drawing.Point(413, 64);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(75, 23);
+            this.BtnClear.Size = new System.Drawing.Size(81, 29);
             this.BtnClear.TabIndex = 6;
             this.BtnClear.Text = "Clear";
-            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // ViewLiquor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(690, 553);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.CboCategory);

@@ -14,15 +14,14 @@ namespace Stockmgmtsystem
         [STAThread]
         static void Main()
         {
-            /*User user = new User();
+            User user = new User();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             bool checkuser = user.CheckUserExist();
             if (checkuser == true)
                Application.Run(new InitialRegister());
             else
-               Application.Run(new Login());*/
-            Application.Run(new StockReport());
+               Application.Run(new Login());
         }
     }
 }

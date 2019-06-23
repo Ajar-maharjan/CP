@@ -38,51 +38,65 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 39);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(30, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Liquor";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 86);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(30, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 13);
+            this.label2.Size = new System.Drawing.Size(170, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "New Liquor stock quantity";
             // 
             // TxtStockquantity
             // 
-            this.TxtStockquantity.Location = new System.Drawing.Point(184, 83);
+            this.TxtStockquantity.BackColor = System.Drawing.Color.Snow;
+            this.TxtStockquantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtStockquantity.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtStockquantity.Location = new System.Drawing.Point(206, 80);
             this.TxtStockquantity.Name = "TxtStockquantity";
-            this.TxtStockquantity.Size = new System.Drawing.Size(90, 20);
+            this.TxtStockquantity.Size = new System.Drawing.Size(90, 23);
             this.TxtStockquantity.TabIndex = 3;
             // 
             // CboLiquor
             // 
+            this.CboLiquor.BackColor = System.Drawing.Color.Snow;
+            this.CboLiquor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboLiquor.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.CboLiquor.FormattingEnabled = true;
-            this.CboLiquor.Location = new System.Drawing.Point(102, 36);
+            this.CboLiquor.Location = new System.Drawing.Point(84, 36);
             this.CboLiquor.Name = "CboLiquor";
-            this.CboLiquor.Size = new System.Drawing.Size(172, 21);
+            this.CboLiquor.Size = new System.Drawing.Size(212, 24);
             this.CboLiquor.TabIndex = 4;
             // 
             // BtnRestock
             // 
-            this.BtnRestock.Location = new System.Drawing.Point(102, 137);
+            this.BtnRestock.BackColor = System.Drawing.Color.Snow;
+            this.BtnRestock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRestock.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnRestock.Location = new System.Drawing.Point(113, 131);
             this.BtnRestock.Name = "BtnRestock";
-            this.BtnRestock.Size = new System.Drawing.Size(99, 23);
+            this.BtnRestock.Size = new System.Drawing.Size(99, 28);
             this.BtnRestock.TabIndex = 5;
             this.BtnRestock.Text = "Restock";
-            this.BtnRestock.UseVisualStyleBackColor = true;
+            this.BtnRestock.UseVisualStyleBackColor = false;
             this.BtnRestock.Click += new System.EventHandler(this.BtnRestock_Click);
             // 
             // RestockLiquor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 181);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(340, 181);
             this.Controls.Add(this.BtnRestock);
             this.Controls.Add(this.CboLiquor);
             this.Controls.Add(this.TxtStockquantity);

@@ -37,25 +37,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
             this.label1.Location = new System.Drawing.Point(31, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter Pin";
             // 
             // TxtPin
             // 
-            this.TxtPin.Location = new System.Drawing.Point(87, 41);
+            this.TxtPin.BackColor = System.Drawing.Color.Snow;
+            this.TxtPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPin.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtPin.Location = new System.Drawing.Point(103, 41);
             this.TxtPin.Name = "TxtPin";
-            this.TxtPin.Size = new System.Drawing.Size(137, 20);
+            this.TxtPin.Size = new System.Drawing.Size(137, 23);
             this.TxtPin.TabIndex = 1;
             // 
             // LblForgotpin
             // 
             this.LblForgotpin.AutoSize = true;
-            this.LblForgotpin.Location = new System.Drawing.Point(44, 79);
+            this.LblForgotpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblForgotpin.LinkColor = System.Drawing.Color.DarkRed;
+            this.LblForgotpin.Location = new System.Drawing.Point(48, 81);
             this.LblForgotpin.Name = "LblForgotpin";
-            this.LblForgotpin.Size = new System.Drawing.Size(61, 13);
+            this.LblForgotpin.Size = new System.Drawing.Size(81, 17);
             this.LblForgotpin.TabIndex = 2;
             this.LblForgotpin.TabStop = true;
             this.LblForgotpin.Text = "Forgot Pin?";
@@ -63,19 +70,23 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(78, 118);
+            this.BtnLogin.BackColor = System.Drawing.Color.Snow;
+            this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnLogin.Location = new System.Drawing.Point(78, 116);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(122, 23);
+            this.BtnLogin.Size = new System.Drawing.Size(122, 35);
             this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 176);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(276, 176);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.LblForgotpin);
             this.Controls.Add(this.TxtPin);

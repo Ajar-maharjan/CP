@@ -36,33 +36,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 36);
+            this.label1.BackColor = System.Drawing.Color.Snow;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(24, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category";
             // 
             // BtnAddcat
             // 
-            this.BtnAddcat.Location = new System.Drawing.Point(81, 90);
+            this.BtnAddcat.BackColor = System.Drawing.Color.Snow;
+            this.BtnAddcat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAddcat.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnAddcat.Location = new System.Drawing.Point(81, 83);
             this.BtnAddcat.Name = "BtnAddcat";
-            this.BtnAddcat.Size = new System.Drawing.Size(85, 23);
+            this.BtnAddcat.Size = new System.Drawing.Size(95, 30);
             this.BtnAddcat.TabIndex = 1;
             this.BtnAddcat.Text = "Add";
-            this.BtnAddcat.UseVisualStyleBackColor = true;
+            this.BtnAddcat.UseVisualStyleBackColor = false;
             this.BtnAddcat.Click += new System.EventHandler(this.BtnAddcat_Click);
             // 
             // TxtCategory
             // 
+            this.TxtCategory.BackColor = System.Drawing.Color.Snow;
+            this.TxtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCategory.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.TxtCategory.Location = new System.Drawing.Point(95, 33);
             this.TxtCategory.Name = "TxtCategory";
-            this.TxtCategory.Size = new System.Drawing.Size(133, 20);
+            this.TxtCategory.Size = new System.Drawing.Size(133, 23);
             this.TxtCategory.TabIndex = 2;
             // 
             // AddCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(264, 142);
             this.Controls.Add(this.TxtCategory);
             this.Controls.Add(this.BtnAddcat);

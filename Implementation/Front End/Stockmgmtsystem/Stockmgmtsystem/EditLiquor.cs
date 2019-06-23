@@ -98,7 +98,7 @@ namespace Stockmgmtsystem
                 liquor.LiquorPrice = Decimal.Parse(TxtPrice.Text);
                 liquor.LiquorQuantity = int.Parse(TxtQuantity.Text);
                 liquor.ThresholdQuantity = int.Parse(TxtThreshold.Text);
-                bool flag = liquor.UpdateLiquor();
+                bool flag = liquor.UpdateLiquor(liquorflag);
                 if (flag)
                 {
                     MessageBox.Show("Selected liquor is updated");

@@ -38,42 +38,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 55);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(41, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter pin";
             // 
             // TxtPin
             // 
-            this.TxtPin.Location = new System.Drawing.Point(147, 52);
+            this.TxtPin.BackColor = System.Drawing.Color.Snow;
+            this.TxtPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPin.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtPin.Location = new System.Drawing.Point(144, 28);
             this.TxtPin.Name = "TxtPin";
-            this.TxtPin.Size = new System.Drawing.Size(140, 20);
+            this.TxtPin.Size = new System.Drawing.Size(140, 23);
             this.TxtPin.TabIndex = 1;
             // 
             // BtnRegister
             // 
-            this.BtnRegister.Location = new System.Drawing.Point(56, 142);
+            this.BtnRegister.BackColor = System.Drawing.Color.Snow;
+            this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegister.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnRegister.Location = new System.Drawing.Point(82, 117);
             this.BtnRegister.Name = "BtnRegister";
-            this.BtnRegister.Size = new System.Drawing.Size(178, 23);
+            this.BtnRegister.Size = new System.Drawing.Size(178, 31);
             this.BtnRegister.TabIndex = 2;
             this.BtnRegister.Text = "Register";
-            this.BtnRegister.UseVisualStyleBackColor = true;
+            this.BtnRegister.UseVisualStyleBackColor = false;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // TxtRepin
             // 
-            this.TxtRepin.Location = new System.Drawing.Point(147, 98);
+            this.TxtRepin.BackColor = System.Drawing.Color.Snow;
+            this.TxtRepin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRepin.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtRepin.Location = new System.Drawing.Point(144, 74);
             this.TxtRepin.Name = "TxtRepin";
-            this.TxtRepin.Size = new System.Drawing.Size(140, 20);
+            this.TxtRepin.Size = new System.Drawing.Size(140, 23);
             this.TxtRepin.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 101);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(41, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Re-enter pin";
             // 
@@ -81,7 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 202);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(329, 172);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtRepin);
             this.Controls.Add(this.BtnRegister);
