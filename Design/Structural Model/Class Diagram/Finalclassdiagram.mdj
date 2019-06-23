@@ -4270,7 +4270,7 @@
 											"top": 749,
 											"width": 219.99072265625,
 											"height": 13,
-											"text": "+Bool dis",
+											"text": "-Bool dis",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10065,13 +10065,47 @@
 											"height": 13,
 											"text": "+IsValidEmail(string email): Bool",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFrhT0xlni+xTg=",
+											"_parent": {
+												"$ref": "AAAAAAFrhPRJHvpsHSk="
+											},
+											"model": {
+												"$ref": "AAAAAAFrhT0xVXiOUeU="
+											},
+											"font": "Arial;13;0",
+											"left": 637,
+											"top": 1189,
+											"width": 243.13427734375,
+											"height": 13,
+											"text": "+IsValidNumInt(TextBox textBox): Bool",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFrhT00qHrgChI=",
+											"_parent": {
+												"$ref": "AAAAAAFrhPRJHvpsHSk="
+											},
+											"model": {
+												"$ref": "AAAAAAFrhT00e3qw5iA="
+											},
+											"font": "Arial;13;0",
+											"left": 637,
+											"top": 1204,
+											"width": 243.13427734375,
+											"height": 13,
+											"text": "+IsValidNumDec(TextBox textBox): Bool",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 632,
 									"top": 1139,
 									"width": 253.13427734375,
-									"height": 53
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -17806,6 +17840,7 @@
 								"$ref": "AAAAAAFrFowD/mXVYc8="
 							},
 							"name": "Bool dis",
+							"visibility": "private",
 							"type": ""
 						}
 					],
@@ -18904,6 +18939,62 @@
 									"_id": "AAAAAAFrhREDT9jHBAM=",
 									"_parent": {
 										"$ref": "AAAAAAFrhQ98MLGhMd4="
+									},
+									"type": "Bool",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFrhT0xVXiOUeU=",
+							"_parent": {
+								"$ref": "AAAAAAFrhPRJHPpjZ2Q="
+							},
+							"name": "IsValidNumInt",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFrhT3UCH7vkSs=",
+									"_parent": {
+										"$ref": "AAAAAAFrhT0xVXiOUeU="
+									},
+									"name": "TextBox textBox",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFrhT3UCH7wAL8=",
+									"_parent": {
+										"$ref": "AAAAAAFrhT0xVXiOUeU="
+									},
+									"type": "Bool",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFrhT00e3qw5iA=",
+							"_parent": {
+								"$ref": "AAAAAAFrhPRJHPpjZ2Q="
+							},
+							"name": "IsValidNumDec",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFrhT4GtIHo+Hg=",
+									"_parent": {
+										"$ref": "AAAAAAFrhT00e3qw5iA="
+									},
+									"name": "TextBox textBox",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFrhT4GtIHpsYs=",
+									"_parent": {
+										"$ref": "AAAAAAFrhT00e3qw5iA="
 									},
 									"type": "Bool",
 									"direction": "return"
