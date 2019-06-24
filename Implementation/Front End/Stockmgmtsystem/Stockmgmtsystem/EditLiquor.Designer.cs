@@ -60,7 +60,6 @@
             // 
             // CboCategory
             // 
-            this.CboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboCategory.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.CboCategory.FormattingEnabled = true;

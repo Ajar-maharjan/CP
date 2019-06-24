@@ -102,8 +102,8 @@ namespace Stockmgmtsystem
                 if (flag)
                 {
                     MessageBox.Show("Selected liquor is updated");
-                    LoadLiquorCbo();
                     LoadLiquor();
+                    LoadLiquorCbo();
                 }
                 else
                     MessageBox.Show("Liquor name already exist");
@@ -121,8 +121,8 @@ namespace Stockmgmtsystem
 
         private void EditLiquor_Load(object sender, EventArgs e)
         {
-            LoadLiquorCbo();
             LoadLiquor();
+            LoadLiquorCbo();
         }
 
         private void LoadLiquorCbo()
@@ -138,6 +138,15 @@ namespace Stockmgmtsystem
             
         }
 
+        private void LoadCbo()
+        {
+            liquorcategory = new LiquorCategory();
+            CboCategory.DisplayMember = "CategoryName";
+            CboCategory.ValueMember = "CategoryId";
+            CboCategory.DataSource = liquorcategory.ViewCategory().Tables["LiquorCategory"];
+
+        }
+
         private void CboLiquor_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLiquor();
@@ -149,6 +158,7 @@ namespace Stockmgmtsystem
             liquor.LiquorId = Convert.ToInt32(CboLiquor.SelectedValue);
             if (liquor.GetLiquor().Rows.Count > 0)
             {
+                LoadCbo();
                 CboCategory.DisplayMember = liquor.GetLiquor().Rows[0][1].ToString();
                 TxtPrice.Text = liquor.GetLiquor().Rows[0][2].ToString();
                 TxtQuantity.Text = liquor.GetLiquor().Rows[0][3].ToString();

@@ -47,8 +47,8 @@ namespace Stockmgmtsystem
 
         private void ViewLiquor_Load(object sender, EventArgs e)
         {
-            LoadLiquor();
             LoadCategoryCbo();
+            LoadLiquor();
             CboCategory.SelectedIndex = -1;
             DgvLiquor.Columns[0].Visible = false;
         }

@@ -34,7 +34,7 @@ namespace Stockmgmtsystem
                 if (flag == true)
                 {
                     LoadLoyalCustomerCbo();
-                MessageBox.Show("Selected loyal customer is deleted");
+                    MessageBox.Show("Selected loyal customer is deleted");
                 }
                 else
                     MessageBox.Show("Email address does not exist");

@@ -35,6 +35,7 @@ namespace Stockmgmtsystem
                 {
                     LoadCategoryCbo();
                     MessageBox.Show("Selected liquor category is deleted");
+                    TxtCategory.Text = "";
                 }
                 else
                     MessageBox.Show("Liquor category does not exist");
@@ -65,6 +66,7 @@ namespace Stockmgmtsystem
                 {
                     MessageBox.Show("Selected liquor category is updated");
                     LoadCategoryCbo();
+                    TxtCategory.Text = "";
                 }
                 else
                     MessageBox.Show("Category already exist");
