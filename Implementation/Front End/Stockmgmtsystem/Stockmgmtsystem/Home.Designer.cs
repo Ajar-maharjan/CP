@@ -76,6 +76,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panelliquor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnRefreshStockStatus = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.DgvStockStatus = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -113,7 +114,7 @@
             this.myAccountToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(686, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(687, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -270,11 +271,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(61, 2);
+            this.label4.Location = new System.Drawing.Point(55, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Stock Status";
             // 
@@ -652,6 +653,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Snow;
+            this.panel2.Controls.Add(this.BtnRefreshStockStatus);
             this.panel2.Controls.Add(this.panel14);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(25, 288);
@@ -659,12 +661,26 @@
             this.panel2.Size = new System.Drawing.Size(210, 222);
             this.panel2.TabIndex = 10;
             // 
+            // BtnRefreshStockStatus
+            // 
+            this.BtnRefreshStockStatus.BackColor = System.Drawing.Color.White;
+            this.BtnRefreshStockStatus.BackgroundImage = global::Stockmgmtsystem.Properties.Resources._6;
+            this.BtnRefreshStockStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnRefreshStockStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefreshStockStatus.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnRefreshStockStatus.Location = new System.Drawing.Point(178, 0);
+            this.BtnRefreshStockStatus.Name = "BtnRefreshStockStatus";
+            this.BtnRefreshStockStatus.Size = new System.Drawing.Size(32, 30);
+            this.BtnRefreshStockStatus.TabIndex = 13;
+            this.BtnRefreshStockStatus.UseVisualStyleBackColor = false;
+            this.BtnRefreshStockStatus.Click += new System.EventHandler(this.BtnRefreshStockStatus_Click);
+            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.DgvStockStatus);
-            this.panel14.Location = new System.Drawing.Point(0, 18);
+            this.panel14.Location = new System.Drawing.Point(0, 36);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(210, 204);
+            this.panel14.Size = new System.Drawing.Size(210, 186);
             this.panel14.TabIndex = 12;
             // 
             // DgvStockStatus
@@ -676,7 +692,7 @@
             this.DgvStockStatus.Location = new System.Drawing.Point(0, 0);
             this.DgvStockStatus.Name = "DgvStockStatus";
             this.DgvStockStatus.ReadOnly = true;
-            this.DgvStockStatus.Size = new System.Drawing.Size(210, 204);
+            this.DgvStockStatus.Size = new System.Drawing.Size(210, 186);
             this.DgvStockStatus.TabIndex = 11;
             // 
             // panel13
@@ -771,7 +787,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(686, 589);
+            this.ClientSize = new System.Drawing.Size(687, 589);
             this.Controls.Add(this.panelliquor);
             this.Controls.Add(this.panelcategory);
             this.Controls.Add(this.panel1);
@@ -879,5 +895,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button BtnRefreshStockStatus;
     }
 }

@@ -149,5 +149,9 @@ namespace Stockmgmtsystem
             DgvStockStatus.DataSource = liquor.NotifyStockStatus().Tables["Liquor"];
         }
 
+        private void BtnRefreshStockStatus_Click(object sender, EventArgs e)
+        {
+            Loadstockstatus();
+        }
     }
 }
