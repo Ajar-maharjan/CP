@@ -31,7 +31,10 @@ namespace Stockmgmtsystem
                 liquorcategory.CategoryName = TxtCategory.Text;
                 bool flag = liquorcategory.AddCategory();
                 if (flag == true)
+                {
                     MessageBox.Show("Category added");
+                    TxtCategory.Text = "";
+                }
                 else
                     MessageBox.Show("Category already exist");
             }

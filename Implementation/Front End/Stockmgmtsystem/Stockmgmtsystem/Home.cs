@@ -20,6 +20,8 @@ namespace Stockmgmtsystem
             panelliquor.Location = panelmain.Location;
         }
 
+        Login login = new Login();
+
         private void BtnCreatebill_Click(object sender, EventArgs e)
         {
             CreateBill createbill = new CreateBill();
@@ -40,10 +42,8 @@ namespace Stockmgmtsystem
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
             this.Hide();
             login.ShowDialog();
-            this.Close();
         }
 
         private void setDefaultDiscountToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,5 +148,6 @@ namespace Stockmgmtsystem
             Liquor liquor = new Liquor();
             DgvStockStatus.DataSource = liquor.NotifyStockStatus().Tables["Liquor"];
         }
+
     }
 }

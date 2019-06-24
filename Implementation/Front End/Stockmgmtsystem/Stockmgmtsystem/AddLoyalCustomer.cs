@@ -35,7 +35,10 @@ namespace Stockmgmtsystem
                 loyalcustomer.Email = TxtEmail.Text;
                 bool flag = loyalcustomer.AddLoyalCustomer();
                 if (flag == true)
+                {
                     MessageBox.Show("Loyal Customer added");
+                    TxtEmail.Text = "";
+                }
                 else
                     MessageBox.Show("Email address already exist");
             }
@@ -44,5 +47,6 @@ namespace Stockmgmtsystem
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

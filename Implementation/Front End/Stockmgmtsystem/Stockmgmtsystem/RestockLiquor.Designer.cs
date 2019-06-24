@@ -65,7 +65,7 @@
             this.TxtStockquantity.Location = new System.Drawing.Point(206, 80);
             this.TxtStockquantity.Name = "TxtStockquantity";
             this.TxtStockquantity.Size = new System.Drawing.Size(90, 23);
-            this.TxtStockquantity.TabIndex = 3;
+            this.TxtStockquantity.TabIndex = 2;
             // 
             // CboLiquor
             // 
@@ -76,7 +76,7 @@
             this.CboLiquor.Location = new System.Drawing.Point(84, 36);
             this.CboLiquor.Name = "CboLiquor";
             this.CboLiquor.Size = new System.Drawing.Size(212, 24);
-            this.CboLiquor.TabIndex = 4;
+            this.CboLiquor.TabIndex = 1;
             // 
             // BtnRestock
             // 
@@ -86,7 +86,7 @@
             this.BtnRestock.Location = new System.Drawing.Point(113, 131);
             this.BtnRestock.Name = "BtnRestock";
             this.BtnRestock.Size = new System.Drawing.Size(99, 28);
-            this.BtnRestock.TabIndex = 5;
+            this.BtnRestock.TabIndex = 3;
             this.BtnRestock.Text = "Restock";
             this.BtnRestock.UseVisualStyleBackColor = false;
             this.BtnRestock.Click += new System.EventHandler(this.BtnRestock_Click);

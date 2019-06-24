@@ -66,6 +66,7 @@ namespace Stockmgmtsystem
                 if (flag == true)
                 {
                     MessageBox.Show("Liquor added successfully");
+                    Clear();
                 }
                 else
                     MessageBox.Show("Liquor name already exist");
@@ -92,6 +93,14 @@ namespace Stockmgmtsystem
             CboCategory.DisplayMember = "CategoryName";
             CboCategory.ValueMember = "CategoryId";
             CboCategory.DataSource = liquorcategory.ViewCategory().Tables["LiquorCategory"];
+        }
+
+        private void Clear()
+        {
+            TxtLiquor.Text = "";
+            TxtPrice.Text = "";
+            TxtQuantity.Text = "";
+            TxtThreshold.Text = "";
         }
     }
 }

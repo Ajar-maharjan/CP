@@ -43,6 +43,7 @@ namespace Stockmgmtsystem
                 if (flag)
                 {
                     MessageBox.Show("Selected liquor restocked");
+                    TxtStockquantity.Text = "";
                 }
                 else
                     MessageBox.Show("Liquor does not exist");

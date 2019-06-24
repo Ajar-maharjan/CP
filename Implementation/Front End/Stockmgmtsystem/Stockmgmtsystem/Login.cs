@@ -51,7 +51,7 @@ namespace Stockmgmtsystem
         {
             recoveraccount = new RecoverAccount();
             this.Hide();
-            recoveraccount.Show();
+            recoveraccount.ShowDialog();
         }
     }
 }

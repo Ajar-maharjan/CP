@@ -41,7 +41,10 @@ namespace Stockmgmtsystem
                 user.RecoveryCode = TxtRecoverycode.Text;
                 bool flag = user.ChangePin();
                 if (flag == true)
+                {
                     MessageBox.Show("Pin Changed");
+                    this.Close();
+                }
                 else
                     MessageBox.Show("Invalid pin or recovery code");
             }

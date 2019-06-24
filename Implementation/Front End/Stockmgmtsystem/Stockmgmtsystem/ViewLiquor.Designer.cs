@@ -62,14 +62,14 @@
             this.DgvLiquor.AllowUserToAddRows = false;
             this.DgvLiquor.AllowUserToDeleteRows = false;
             this.DgvLiquor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvLiquor.BackgroundColor = System.Drawing.Color.SeaShell;
+            this.DgvLiquor.BackgroundColor = System.Drawing.Color.Linen;
             this.DgvLiquor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvLiquor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvLiquor.Location = new System.Drawing.Point(0, 0);
             this.DgvLiquor.Name = "DgvLiquor";
             this.DgvLiquor.ReadOnly = true;
             this.DgvLiquor.Size = new System.Drawing.Size(689, 452);
-            this.DgvLiquor.TabIndex = 0;
+            this.DgvLiquor.TabIndex = 5;
             // 
             // label1
             // 
@@ -101,7 +101,7 @@
             this.BtnSearch.Location = new System.Drawing.Point(413, 29);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(81, 29);
-            this.BtnSearch.TabIndex = 4;
+            this.BtnSearch.TabIndex = 1;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
@@ -115,7 +115,7 @@
             this.CboCategory.Location = new System.Drawing.Point(210, 67);
             this.CboCategory.Name = "CboCategory";
             this.CboCategory.Size = new System.Drawing.Size(178, 24);
-            this.CboCategory.TabIndex = 5;
+            this.CboCategory.TabIndex = 2;
             this.CboCategory.SelectedIndexChanged += new System.EventHandler(this.CboCategory_SelectedIndexChanged);
             // 
             // BtnClear
@@ -126,7 +126,7 @@
             this.BtnClear.Location = new System.Drawing.Point(413, 64);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(81, 29);
-            this.BtnClear.TabIndex = 6;
+            this.BtnClear.TabIndex = 3;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = false;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(690, 553);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.CboCategory);

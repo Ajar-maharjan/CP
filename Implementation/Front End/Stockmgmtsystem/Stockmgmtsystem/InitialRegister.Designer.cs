@@ -33,6 +33,7 @@
             this.BtnRegister = new System.Windows.Forms.Button();
             this.TxtRepin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +62,7 @@
             this.BtnRegister.BackColor = System.Drawing.Color.Snow;
             this.BtnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegister.ForeColor = System.Drawing.Color.IndianRed;
-            this.BtnRegister.Location = new System.Drawing.Point(82, 117);
+            this.BtnRegister.Location = new System.Drawing.Point(102, 117);
             this.BtnRegister.Name = "BtnRegister";
             this.BtnRegister.Size = new System.Drawing.Size(178, 31);
             this.BtnRegister.TabIndex = 2;
@@ -90,12 +91,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Re-enter pin";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackgroundImage = global::Stockmgmtsystem.Properties.Resources._2;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Location = new System.Drawing.Point(295, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(67, 65);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            // 
             // InitialRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(329, 172);
+            this.ClientSize = new System.Drawing.Size(374, 176);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtRepin);
             this.Controls.Add(this.BtnRegister);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button BtnRegister;
         private System.Windows.Forms.TextBox TxtRepin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

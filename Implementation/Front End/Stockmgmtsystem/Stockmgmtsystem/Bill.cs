@@ -42,7 +42,7 @@ namespace Stockmgmtsystem
         public void AutoUpdateLiquorStock(int billid)
         {
             db = new DbConnect();
-            string query = "insert into LiquorBill values ("+ billid +","+ LiquorId +")";
+            string query = "insert into LiquorBill values ("+ billid +","+ LiquorId +", "+ Quantity + ")";
             manipulate(query);
             string query2 = "update LiquorQuantity set Quantity = Quantity -" + Quantity
                         + "where LiquorId = '"+ LiquorId +"'";

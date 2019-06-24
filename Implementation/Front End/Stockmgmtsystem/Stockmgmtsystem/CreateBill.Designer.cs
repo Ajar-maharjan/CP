@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateBill));
             this.CboLoyalcustomer = new System.Windows.Forms.ComboBox();
             this.ChkApplydiscount = new System.Windows.Forms.CheckBox();
             this.CboLiquor = new System.Windows.Forms.ComboBox();
@@ -54,6 +55,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.LblDiscount = new System.Windows.Forms.Label();
+            this.BtnClear = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.PrintBill = new System.Drawing.Printing.PrintDocument();
+            this.BillPrintPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBill)).BeginInit();
             this.SuspendLayout();
@@ -75,10 +81,10 @@
             this.ChkApplydiscount.AutoSize = true;
             this.ChkApplydiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkApplydiscount.ForeColor = System.Drawing.Color.IndianRed;
-            this.ChkApplydiscount.Location = new System.Drawing.Point(239, 524);
+            this.ChkApplydiscount.Location = new System.Drawing.Point(383, 550);
             this.ChkApplydiscount.Name = "ChkApplydiscount";
             this.ChkApplydiscount.Size = new System.Drawing.Size(121, 21);
-            this.ChkApplydiscount.TabIndex = 1;
+            this.ChkApplydiscount.TabIndex = 5;
             this.ChkApplydiscount.Text = "Apply Discount";
             this.ChkApplydiscount.UseVisualStyleBackColor = true;
             this.ChkApplydiscount.CheckedChanged += new System.EventHandler(this.ChkApplydiscount_CheckedChanged);
@@ -92,7 +98,7 @@
             this.CboLiquor.Location = new System.Drawing.Point(127, 125);
             this.CboLiquor.Name = "CboLiquor";
             this.CboLiquor.Size = new System.Drawing.Size(192, 24);
-            this.CboLiquor.TabIndex = 2;
+            this.CboLiquor.TabIndex = 1;
             // 
             // panel1
             // 
@@ -120,7 +126,7 @@
             this.DgvBill.Name = "DgvBill";
             this.DgvBill.ReadOnly = true;
             this.DgvBill.Size = new System.Drawing.Size(492, 228);
-            this.DgvBill.TabIndex = 0;
+            this.DgvBill.TabIndex = 19;
             // 
             // LiquorId
             // 
@@ -154,7 +160,7 @@
             this.TxtQuantity.Location = new System.Drawing.Point(127, 167);
             this.TxtQuantity.Name = "TxtQuantity";
             this.TxtQuantity.Size = new System.Drawing.Size(60, 23);
-            this.TxtQuantity.TabIndex = 4;
+            this.TxtQuantity.TabIndex = 2;
             // 
             // BtnAdd
             // 
@@ -164,7 +170,7 @@
             this.BtnAdd.Location = new System.Drawing.Point(350, 160);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(96, 30);
-            this.BtnAdd.TabIndex = 6;
+            this.BtnAdd.TabIndex = 3;
             this.BtnAdd.Text = "Add Liquor";
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
@@ -176,17 +182,17 @@
             this.TxtCash.Location = new System.Drawing.Point(437, 467);
             this.TxtCash.Name = "TxtCash";
             this.TxtCash.Size = new System.Drawing.Size(45, 23);
-            this.TxtCash.TabIndex = 7;
+            this.TxtCash.TabIndex = 4;
             // 
             // BtnCreate
             // 
             this.BtnCreate.BackColor = System.Drawing.Color.Snow;
             this.BtnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCreate.ForeColor = System.Drawing.Color.IndianRed;
-            this.BtnCreate.Location = new System.Drawing.Point(384, 559);
+            this.BtnCreate.Location = new System.Drawing.Point(418, 588);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(86, 33);
-            this.BtnCreate.TabIndex = 8;
+            this.BtnCreate.TabIndex = 7;
             this.BtnCreate.Text = "Create";
             this.BtnCreate.UseVisualStyleBackColor = false;
             this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
@@ -196,10 +202,10 @@
             this.BtnClose.BackColor = System.Drawing.Color.Snow;
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClose.ForeColor = System.Drawing.Color.IndianRed;
-            this.BtnClose.Location = new System.Drawing.Point(28, 559);
+            this.BtnClose.Location = new System.Drawing.Point(19, 588);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(88, 33);
-            this.BtnClose.TabIndex = 9;
+            this.BtnClose.TabIndex = 10;
             this.BtnClose.Text = "Close";
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
@@ -336,12 +342,66 @@
             this.LblDiscount.TabIndex = 21;
             this.LblDiscount.Text = "0000";
             // 
+            // BtnClear
+            // 
+            this.BtnClear.BackColor = System.Drawing.Color.Snow;
+            this.BtnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClear.ForeColor = System.Drawing.Color.IndianRed;
+            this.BtnClear.Location = new System.Drawing.Point(127, 588);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(88, 33);
+            this.BtnClear.TabIndex = 9;
+            this.BtnClear.Text = "Clear";
+            this.BtnClear.UseVisualStyleBackColor = false;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Snow;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.IndianRed;
+            this.btnPrint.Location = new System.Drawing.Point(312, 588);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(88, 33);
+            this.btnPrint.TabIndex = 6;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackgroundImage = global::Stockmgmtsystem.Properties.Resources._3;
+            this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox2.Location = new System.Drawing.Point(423, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(59, 66);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            // 
+            // PrintBill
+            // 
+            this.PrintBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintBill_PrintPage);
+            // 
+            // BillPrintPreview
+            // 
+            this.BillPrintPreview.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.BillPrintPreview.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.BillPrintPreview.ClientSize = new System.Drawing.Size(400, 300);
+            this.BillPrintPreview.Document = this.PrintBill;
+            this.BillPrintPreview.Enabled = true;
+            this.BillPrintPreview.Icon = ((System.Drawing.Icon)(resources.GetObject("BillPrintPreview.Icon")));
+            this.BillPrintPreview.Name = "BillPrintPreview";
+            this.BillPrintPreview.Visible = false;
+            // 
             // CreateBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(516, 622);
+            this.ClientSize = new System.Drawing.Size(517, 636);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.LblDiscount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
@@ -403,5 +463,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LiquorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Drawing.Printing.PrintDocument PrintBill;
+        private System.Windows.Forms.PrintPreviewDialog BillPrintPreview;
     }
 }

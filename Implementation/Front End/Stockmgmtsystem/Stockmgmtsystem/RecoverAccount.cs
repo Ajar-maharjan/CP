@@ -45,8 +45,8 @@ namespace Stockmgmtsystem
         private void LblreturnLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             login = new Login();
-            this.Close();
-            login.Show();
+            this.Hide();
+            login.ShowDialog();
         }
     }
 }

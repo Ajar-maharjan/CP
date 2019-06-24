@@ -78,7 +78,7 @@
             this.BtnSave.Location = new System.Drawing.Point(107, 181);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 34);
-            this.BtnSave.TabIndex = 3;
+            this.BtnSave.TabIndex = 4;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = false;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -91,7 +91,7 @@
             this.TxtOldpin.Location = new System.Drawing.Point(136, 39);
             this.TxtOldpin.Name = "TxtOldpin";
             this.TxtOldpin.Size = new System.Drawing.Size(127, 23);
-            this.TxtOldpin.TabIndex = 4;
+            this.TxtOldpin.TabIndex = 1;
             // 
             // TxtNewpin
             // 
@@ -101,7 +101,7 @@
             this.TxtNewpin.Location = new System.Drawing.Point(136, 84);
             this.TxtNewpin.Name = "TxtNewpin";
             this.TxtNewpin.Size = new System.Drawing.Size(127, 23);
-            this.TxtNewpin.TabIndex = 5;
+            this.TxtNewpin.TabIndex = 2;
             // 
             // TxtRecoverycode
             // 
@@ -111,7 +111,7 @@
             this.TxtRecoverycode.Location = new System.Drawing.Point(136, 131);
             this.TxtRecoverycode.Name = "TxtRecoverycode";
             this.TxtRecoverycode.Size = new System.Drawing.Size(127, 23);
-            this.TxtRecoverycode.TabIndex = 6;
+            this.TxtRecoverycode.TabIndex = 3;
             // 
             // ChangePin
             // 

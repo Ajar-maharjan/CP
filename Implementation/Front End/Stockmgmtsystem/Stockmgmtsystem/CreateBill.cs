@@ -44,7 +44,27 @@ namespace Stockmgmtsystem
                 liquor = new Liquor();
                 liquor.LiquorId = Convert.ToInt32(CboLiquor.SelectedValue);
                 Decimal price = Convert.ToDecimal(liquor.GetLiquorPrice().Rows[0][0]);
+                int quant = Convert.ToInt32(liquor.GetLiquorPrice().Rows[0][1]);
                 int quantity = int.Parse(TxtQuantity.Text);
+                if (quantity > quant)
+                {
+                    throw new Exception("Not enough liquor in stock");
+                }
+                if (quantity == 0)
+                {
+                    throw new Exception("Invalid quantity");
+                }
+                for (int row = 0; row < DgvBill.Rows.Count; row++)
+                {
+                    for (int col = 0; col < DgvBill.Columns.Count; col++)
+                    {
+                        if (DgvBill.Rows[row].Cells[col].Value != null &&
+                            DgvBill.Rows[row].Cells[col].Value.Equals(CboLiquor.Text.Trim()))
+                        {
+                            throw new Exception("Cannot enter same liquor twice");
+                        }
+                    }
+                }
                 decimal total = price * quantity;
                 this.DgvBill.Rows.Add(liquor.LiquorId,CboLiquor.Text, quantity, total);
                 decimal result = 0;
@@ -53,6 +73,7 @@ namespace Stockmgmtsystem
                     result += Convert.ToDecimal(row.Cells["Price"].Value);
                 }
                 LblTotal.Text = result.ToString();
+                ClearLiquor();
             }
             catch (Exception ex)
             {
@@ -64,18 +85,13 @@ namespace Stockmgmtsystem
         {
             try
             {
-                if(Convert.ToDecimal(LblChange.Text) < 0)
+                if(Convert.ToDecimal(LblChange.Text) < 0 || LblChange.Text == "0000")
                 {
                     throw new Exception("Not enough cash for complete transaction");
                 }
                 if (DgvBill.Rows.Count == 0)
                 {
                     throw new Exception("Liquor is not selected");
-                }
-                bool pointscheck = AllowCheck();
-                if (pointscheck)
-                {
-                    
                 }
                 bill = new Bill();
                 int cust = (Convert.ToInt32(CboLoyalcustomer.SelectedValue));
@@ -198,6 +214,12 @@ namespace Stockmgmtsystem
             ChkApplydiscount.Checked = false;
         }
 
+        private void ClearLiquor()
+        {
+            CboLiquor.SelectedIndex = -1;
+            TxtQuantity.Text = "";
+        }
+
         private void ChkApplydiscount_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -225,6 +247,27 @@ namespace Stockmgmtsystem
                     }
                 }
             }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        Bitmap bmp;
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            Graphics bill = this.CreateGraphics();
+            bmp = new Bitmap(this.Size.Width-15, this.Size.Height-315, bill);
+            Graphics img = Graphics.FromImage(bmp);
+            img.CopyFromScreen(this.Location.X+7, this.Location.Y+220, 0, 0, this.Size);
+            BillPrintPreview.ShowDialog();
+        }
+
+        private void PrintBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp,0,0);
         }
     }
 

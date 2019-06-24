@@ -129,7 +129,7 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataTable dt;
-            string query = "select LiquorPrice from Liquor where LiquorId = " + LiquorId;
+            string query = "select L.LiquorPrice, Q.Quantity from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId where L.LiquorId = " + LiquorId;
             dt = db.select(query);
             return dt;
         }
@@ -150,7 +150,7 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataSet ds;
-            string query = " select L.LiquorName , Count(B.LiquorId) as Total_bought_Liquor " +
+            string query = " select L.LiquorName , Sum(B.Quantity) as Total_bought_Liquor " +
                         "from LiquorBill B  inner join Liquor L on L.LiquorId = B.LiquorId " +
                         "group by L.LiquorName";
             string table = "Liquor";

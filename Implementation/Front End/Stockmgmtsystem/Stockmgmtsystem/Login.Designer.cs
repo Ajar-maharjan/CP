@@ -32,6 +32,7 @@
             this.TxtPin = new System.Windows.Forms.TextBox();
             this.LblForgotpin = new System.Windows.Forms.LinkLabel();
             this.BtnLogin = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,10 +61,10 @@
             this.LblForgotpin.AutoSize = true;
             this.LblForgotpin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblForgotpin.LinkColor = System.Drawing.Color.DarkRed;
-            this.LblForgotpin.Location = new System.Drawing.Point(48, 81);
+            this.LblForgotpin.Location = new System.Drawing.Point(61, 83);
             this.LblForgotpin.Name = "LblForgotpin";
             this.LblForgotpin.Size = new System.Drawing.Size(81, 17);
-            this.LblForgotpin.TabIndex = 2;
+            this.LblForgotpin.TabIndex = 4;
             this.LblForgotpin.TabStop = true;
             this.LblForgotpin.Text = "Forgot Pin?";
             this.LblForgotpin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblForgotpin_LinkClicked);
@@ -73,7 +74,7 @@
             this.BtnLogin.BackColor = System.Drawing.Color.Snow;
             this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLogin.ForeColor = System.Drawing.Color.IndianRed;
-            this.BtnLogin.Location = new System.Drawing.Point(78, 116);
+            this.BtnLogin.Location = new System.Drawing.Point(108, 120);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(122, 35);
             this.BtnLogin.TabIndex = 3;
@@ -81,12 +82,23 @@
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackgroundImage = global::Stockmgmtsystem.Properties.Resources._1;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Location = new System.Drawing.Point(246, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(56, 66);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(276, 176);
+            this.ClientSize = new System.Drawing.Size(324, 176);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.LblForgotpin);
             this.Controls.Add(this.TxtPin);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.TextBox TxtPin;
         private System.Windows.Forms.LinkLabel LblForgotpin;
         private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
