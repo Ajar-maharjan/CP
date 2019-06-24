@@ -240,7 +240,8 @@ namespace Stockmgmtsystem
                     {
                         decimal discount = DiscountCalc(decimal.Parse(LblTotal.Text));
                         LblDiscount.Text = discount.ToString();
-                        decimal total = Convert.ToDecimal(LblTotal.Text) - Convert.ToDecimal(LblDiscount.Text);
+                        decimal total = Convert.ToDecimal(LblTotal.Text) - 
+                                        Convert.ToDecimal(LblDiscount.Text);
                         LblTotal.Text = total.ToString();
                         dis = true;
                         count = count + 1;
@@ -270,5 +271,4 @@ namespace Stockmgmtsystem
             e.Graphics.DrawImage(bmp,0,0);
         }
     }
-
 }

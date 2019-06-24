@@ -77,8 +77,10 @@
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CboEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "DeleteLoyalCustomer";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Loyal Customer";
             this.Load += new System.EventHandler(this.DeleteLoyalCustomer_Load);

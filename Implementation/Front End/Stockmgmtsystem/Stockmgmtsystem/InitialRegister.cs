@@ -39,7 +39,9 @@ namespace Stockmgmtsystem
                 user = new User();
                 user.Pin = TxtPin.Text;
                 string recovery = user.Register();
-                MessageBox.Show("User registered."+ Environment.NewLine + "Your Recovery code is " + recovery + Environment.NewLine + "(Code is copied in clipboard)");
+                MessageBox.Show("User registered."+ Environment.NewLine 
+                    + "Your Recovery code is " + recovery + Environment.NewLine 
+                    + "(Code is copied in clipboard)");
                 Clipboard.SetText(recovery);
                 this.Hide();
                 login = new Login();
@@ -50,5 +52,6 @@ namespace Stockmgmtsystem
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

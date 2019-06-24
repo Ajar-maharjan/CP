@@ -77,8 +77,10 @@
             this.ClientSize = new System.Drawing.Size(414, 598);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "StockReport";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Report";
             this.Load += new System.EventHandler(this.StockReport_Load);

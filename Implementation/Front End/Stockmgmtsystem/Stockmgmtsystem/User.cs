@@ -32,7 +32,8 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             RecoveryCode = CreateRecoveryCode();
-            string query = "insert into Users values ('" + Pin + "','" + RecoveryCode + "')";
+            string query = "insert into Users values ('" + Pin + "','" 
+                            + RecoveryCode + "')";
             db.manipulate(query);
             return RecoveryCode;
         }
@@ -47,7 +48,8 @@ namespace Stockmgmtsystem
             if (dt.Rows.Count > 0)
             {
                 string query2 = "update Users set Pin = '" + Pin + "' " +
-                           "where Pin = '" + OldPin + "'And RecoveryCode ='" + RecoveryCode + "'";
+                           "where Pin = '" + OldPin + "'And " +
+                           "RecoveryCode ='" + RecoveryCode + "'";
                 manipulate(query2);
                 return true;
             }
@@ -59,7 +61,8 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataTable dt;
-            string query = "select Pin from Users where RecoveryCode ='" + RecoveryCode + "'";
+            string query = "select Pin from Users where RecoveryCode ='" 
+                            + RecoveryCode + "'";
             dt = db.select(query);
             if (dt.Rows.Count > 0)
             {
@@ -105,7 +108,8 @@ namespace Stockmgmtsystem
             char ch;
             for (int i = 0; i < size; i++)
             {
-                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                ch = Convert.ToChar(Convert.ToInt32
+                            (Math.Floor(26 * random.NextDouble() + 65)));
                 builder.Append(ch);
             }
             if (lowerCase)

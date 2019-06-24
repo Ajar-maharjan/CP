@@ -91,8 +91,10 @@
             this.Controls.Add(this.BtnRecoverpin);
             this.Controls.Add(this.TxtRecoverycode);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "RecoverAccount";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recover Account";
             this.ResumeLayout(false);

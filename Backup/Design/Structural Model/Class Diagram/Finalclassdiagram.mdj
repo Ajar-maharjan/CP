@@ -5068,7 +5068,7 @@
 											"top": 511,
 											"width": 71.50634765625,
 											"height": 13,
-											"text": "Change Pin"
+											"text": "ChangePin"
 										},
 										{
 											"_type": "LabelView",
@@ -17992,7 +17992,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFq1PGhDVYuAw0="
 					},
-					"name": "Change Pin",
+					"name": "ChangePin",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

@@ -16,7 +16,8 @@ namespace Stockmgmtsystem
 
         public DbConnect()
         {
-            con = new SqlConnection("Data Source=.;Initial Catalog=stockmgmtsystem;Integrated Security=True");
+            con = new SqlConnection("Data Source=.;Initial Catalog=stockmgmtsystem;" +
+                                    "Integrated Security=True");
 
         }
         public void manipulate (string query)

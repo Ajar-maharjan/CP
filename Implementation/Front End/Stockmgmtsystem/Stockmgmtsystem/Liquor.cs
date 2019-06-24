@@ -72,8 +72,8 @@ namespace Stockmgmtsystem
             }
             if (count == 0)
             {
-                string query2 = "update Liquor set LiquorName = '" + LiquorName +"', LiquorPrice =" + LiquorPrice + "," +
-                            "CategoryId =" + CategoryId + " where LiquorId =" + LiquorId ;
+                string query2 = "update Liquor set LiquorName = '" + LiquorName +"', LiquorPrice =" 
+                    + LiquorPrice + ",CategoryId =" + CategoryId + " where LiquorId =" + LiquorId ;
                 string query3 = "update LiquorQuantity set Quantity = '" + LiquorQuantity + "', " +
                             "Threshold =" + ThresholdQuantity + " where LiquorId =" + LiquorId;
                 manipulate(query2);
@@ -105,9 +105,10 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataSet ds;
-            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
-                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
-                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId";
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice," +
+                        "Q.Quantity,Q.Threshold from Liquor L inner join LiquorQuantity Q " +
+                        "on L.LiquorId = Q.LiquorId inner join LiquorCategory C on " +
+                        "C.CategoryId = L.CategoryId";
             string table = "Liquor";
             ds = db.list(query, table);
             return ds;
@@ -117,10 +118,10 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataTable dt;
-            string query = "select L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
-                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
-                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
-                        "where L.LiquorId = " + LiquorId;
+            string query = "select L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity," +
+                        "Q.Threshold from Liquor L inner join LiquorQuantity Q " +
+                        "on L.LiquorId = Q.LiquorId inner join LiquorCategory C " +
+                        "on C.CategoryId = L.CategoryId where L.LiquorId = " + LiquorId;
             dt = db.select(query);
             return dt;
         }
@@ -129,7 +130,9 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataTable dt;
-            string query = "select L.LiquorPrice, Q.Quantity from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId where L.LiquorId = " + LiquorId;
+            string query = "select L.LiquorPrice, Q.Quantity from Liquor L " +
+                        "inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
+                        "where L.LiquorId = " + LiquorId;
             dt = db.select(query);
             return dt;
         }
@@ -162,10 +165,11 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataSet ds;
-            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
-                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
-                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
-                        "where L.LiquorName Like '%"+ liquorname +"%'";
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice," +
+                        "Q.Quantity,Q.Threshold from Liquor L inner join LiquorQuantity Q " +
+                        "on L.LiquorId = Q.LiquorId inner join LiquorCategory C on " +
+                        "C.CategoryId = L.CategoryId where L.LiquorName Like '%"
+                        + liquorname +"%'";
             string table = "Liquor";
             ds = db.list(query, table);
             return ds;
@@ -175,10 +179,10 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataSet ds;
-            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
-                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
-                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
-                        "where C.CategoryId = "+CategoryId;
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice," +
+                        "Q.Quantity,Q.Threshold from Liquor L inner join LiquorQuantity Q " +
+                        "on L.LiquorId = Q.LiquorId inner join LiquorCategory C " +
+                        "on C.CategoryId = L.CategoryId where C.CategoryId = "+CategoryId;
             string table = "Liquor";
             ds = db.list(query, table);
             return ds;
@@ -188,10 +192,11 @@ namespace Stockmgmtsystem
         {
             db = new DbConnect();
             DataSet ds;
-            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice,Q.Quantity,Q.Threshold " +
-                        "from Liquor L inner join LiquorQuantity Q on L.LiquorId = Q.LiquorId " +
-                        "inner join LiquorCategory C on C.CategoryId = L.CategoryId " +
-                        "where C.CategoryId = " + categoryid + "and L.LiquorName Like '%" + liquorname + "%'";
+            string query = "select L.LiquorId,L.LiquorName,C.CategoryName,L.LiquorPrice," +
+                        "Q.Quantity,Q.Threshold from Liquor L inner join LiquorQuantity Q " +
+                        "on L.LiquorId = Q.LiquorId inner join LiquorCategory C on " +
+                        "C.CategoryId = L.CategoryId where C.CategoryId = " + categoryid 
+                        + "and L.LiquorName Like '%" + liquorname + "%'";
             string table = "Liquor";
             ds = db.list(query, table);
             return ds;

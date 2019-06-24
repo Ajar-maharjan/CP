@@ -113,8 +113,10 @@
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.TxtPin);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "InitialRegister";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Initial Register";
             this.ResumeLayout(false);

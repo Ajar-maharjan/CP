@@ -423,8 +423,10 @@
             this.Controls.Add(this.CboLiquor);
             this.Controls.Add(this.ChkApplydiscount);
             this.Controls.Add(this.CboLoyalcustomer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MinimizeBox = false;
             this.Name = "CreateBill";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Bill";
             this.Load += new System.EventHandler(this.CreateBill_Load);

@@ -76,8 +76,10 @@
             this.Controls.Add(this.BtnAddcust);
             this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "AddLoyalCustomer";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Loyal Customer";
             this.ResumeLayout(false);

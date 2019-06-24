@@ -130,8 +130,10 @@
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "EditCategory";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Liquor Category";
             this.Load += new System.EventHandler(this.EditCategory_Load);
