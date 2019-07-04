@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Stockmgmtsystem
 {
-    class Bill: DbConnect
+    public class Bill: DbConnect
     {
 
         public int DefaultDiscount { get; set; }

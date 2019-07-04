@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Stockmgmtsystem
 {
-    class DbConnect
+    public class DbConnect
     {
         SqlConnection con;
         DataSet ds;

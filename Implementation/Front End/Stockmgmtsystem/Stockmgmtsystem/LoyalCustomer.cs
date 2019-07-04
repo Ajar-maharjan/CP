@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Stockmgmtsystem
 {
-    class LoyalCustomer:DbConnect
+    public class LoyalCustomer:DbConnect
     {
         public int CustomerId { get; set; }
         public string Email { get; set; }

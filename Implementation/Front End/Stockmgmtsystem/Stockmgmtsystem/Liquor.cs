@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Stockmgmtsystem
 {
-    class Liquor: DbConnect
+    public class Liquor: DbConnect
     {
         public int LiquorId { get; set; }
         public string LiquorName { get; set; }

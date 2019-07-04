@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Stockmgmtsystem
 {
-    class User :DbConnect
+    public class User :DbConnect
     {
         public string Pin { get; set; }
         public string OldPin { get; set; }

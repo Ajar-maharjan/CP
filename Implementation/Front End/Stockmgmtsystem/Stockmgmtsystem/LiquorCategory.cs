@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Stockmgmtsystem
 {
-    class LiquorCategory : DbConnect
+    public class LiquorCategory : DbConnect
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
