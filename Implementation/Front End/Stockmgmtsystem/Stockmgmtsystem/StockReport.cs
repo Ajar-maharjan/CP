@@ -18,12 +18,15 @@ namespace Stockmgmtsystem
         }
 
         Liquor liquor;
+        Bill bill;
 
         private void StockReport_Load(object sender, EventArgs e)
         {
             liquor = new Liquor();
+            bill = new Bill();
             DgvReport.DataMember = "Liquor";
             DgvReport.DataSource = liquor.CreateReport().Tables["Liquor"];
+            LblTotal.Text = bill.TotalEarning();
         }
     }
 }

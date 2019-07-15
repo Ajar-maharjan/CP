@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Stockmgmtsystem
 {
-    public class Bill: DbConnect
+    public class Bill : DbConnect
     {
 
         public int DefaultDiscount { get; set; }
@@ -24,7 +24,11 @@ namespace Stockmgmtsystem
         public DataTable CreateBill()
         {
             db = new DbConnect();
-            string query = "insert into Bill values (" + Total + ",null)";
+            string query;
+            if (LoyalCustomerId == 0)
+                query = "insert into Bill values (" + Total + ",null)";
+            else
+                query = "insert into Bill values (" + Total + "," + LoyalCustomerId + ")";
             manipulate(query);
             DataTable dt;
             string query2 = "select top 1 BillId from Bill order by BillId desc";
@@ -35,18 +39,18 @@ namespace Stockmgmtsystem
         public void SetDefaultDiscount()
         {
             db = new DbConnect();
-            string query = "update discount set discount ="+DefaultDiscount;
+            string query = "update discount set discount =" + DefaultDiscount;
             manipulate(query);
         }
 
         public void AutoUpdateLiquorStock(int billid)
         {
             db = new DbConnect();
-            string query = "insert into LiquorBill values ("+ billid +","+ LiquorId 
-                            +", "+ Quantity + ")";
+            string query = "insert into LiquorBill values (" + billid + "," + LiquorId
+                            + ", " + Quantity + ")";
             manipulate(query);
             string query2 = "update LiquorQuantity set Quantity = Quantity -" + Quantity
-                        + "where LiquorId = '"+ LiquorId +"'";
+                        + "where LiquorId = '" + LiquorId + "'";
             manipulate(query2);
         }
 
@@ -74,6 +78,16 @@ namespace Stockmgmtsystem
             dt = db.select(query);
             int discount = int.Parse(dt.Rows[0][0].ToString());
             return discount;
+        }
+
+        public string TotalEarning()
+        {
+            db = new DbConnect();
+            DataTable dt;
+            string query = "select SUM(TotalAmount) from Bill";
+            dt = db.select(query);
+            string total = dt.Rows[0][0].ToString();
+            return total;
         }
     }
 }

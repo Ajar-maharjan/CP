@@ -31,6 +31,8 @@
             this.DgvReport = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReport)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,12 +71,36 @@
             this.panel1.Size = new System.Drawing.Size(416, 545);
             this.panel1.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(76, 603);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total Earning:";
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.ForeColor = System.Drawing.Color.IndianRed;
+            this.LblTotal.Location = new System.Drawing.Point(189, 603);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(18, 20);
+            this.LblTotal.TabIndex = 5;
+            this.LblTotal.Text = "0";
+            // 
             // StockReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(414, 598);
+            this.ClientSize = new System.Drawing.Size(414, 632);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -96,5 +122,7 @@
         private System.Windows.Forms.DataGridView DgvReport;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblTotal;
     }
 }
